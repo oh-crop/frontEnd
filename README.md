@@ -15,6 +15,6 @@
 ## Abstract
 
 **Technologies Used:**
-*React Native*, *React Expo*
+*React Native*, *React Navigator*, *Expo*, *Jest*, *TravisCI*
 
 Oh Crop is a ...
