@@ -20,7 +20,9 @@ export default styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     backgroundColor: '#5DA25B',
-    boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.05)",
+    shadowOffset:{  width: 7,  height: 7,  },
+    shadowColor: 'black',
+    shadowOpacity: .1,
     margin: 10,
     width: 150,
     textAlign: 'center'
