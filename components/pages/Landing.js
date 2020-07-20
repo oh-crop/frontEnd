@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View, Image, Text } from 'react-native';
+
 import styles from '../../styles/styles';
 
 export default function Landing(props) {
@@ -12,7 +13,7 @@ export default function Landing(props) {
         <Text style={styles.text}>Search Plants</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={ () => props.navigation.navigate('MyGarden') }>
         <Text style={styles.text}>My Garden</Text>
       </TouchableOpacity>
 
