@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import styles from './styles/styles';
 import Landing from './components/pages/Landing';
 import Search from './components/pages/Search';
+import MyGarden from './components/pages/MyGarden';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Landing} options={{ title: 'Welcome' }} />
         <Stack.Screen name="Search" component={Search} options={{ title: 'Search Screen' }}/>
+        <Stack.Screen name="MyGarden" component={MyGarden} options={{ title: 'My Garden Screen' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
