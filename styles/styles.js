@@ -10,7 +10,7 @@ export default styles = StyleSheet.create({
   },
   text: {
     color: 'white',
-    fontSize: 20,
+    fontSize: 19,
   },
   logo: {
     height: 300,
@@ -25,6 +25,8 @@ export default styles = StyleSheet.create({
     shadowOpacity: .1,
     margin: 10,
     width: 150,
+    display: 'flex',
+    justifyContent: 'center',
     textAlign: 'center'
   }
 });
