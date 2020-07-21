@@ -38,6 +38,8 @@ exports[`Landing Page Landing Page does render 1`] = `
       Object {
         "backgroundColor": "#5DA25B",
         "borderRadius": 10,
+        "display": "flex",
+        "justifyContent": "center",
         "margin": 10,
         "opacity": 1,
         "padding": 15,
@@ -56,7 +58,7 @@ exports[`Landing Page Landing Page does render 1`] = `
       style={
         Object {
           "color": "white",
-          "fontSize": 20,
+          "fontSize": 19,
         }
       }
     >
@@ -77,6 +79,8 @@ exports[`Landing Page Landing Page does render 1`] = `
       Object {
         "backgroundColor": "#5DA25B",
         "borderRadius": 10,
+        "display": "flex",
+        "justifyContent": "center",
         "margin": 10,
         "opacity": 1,
         "padding": 15,
@@ -95,7 +99,7 @@ exports[`Landing Page Landing Page does render 1`] = `
       style={
         Object {
           "color": "white",
-          "fontSize": 20,
+          "fontSize": 19,
         }
       }
     >
