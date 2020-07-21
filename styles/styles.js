@@ -22,8 +22,9 @@ export default styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   meetAPlant: {
-    // alignItems: 'center',
-    
+    height: 200,
+    width: 300,
+    alignSelf: 'center',
   },
   text: {
     color: 'white',
