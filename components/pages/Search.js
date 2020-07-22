@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Text, Image, TextInput, FlatList, SafeAreaView, TouchableHighlight  } from 'react-native';
+import { View, Text, FlatList, SafeAreaView } from 'react-native';
 
 import PlantItem from '../PlantItem';
 import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
@@ -25,18 +25,30 @@ export default class Search extends Component {
     hasSearched: false,
   };
 
+  render () {
+    return (
+      <SafeAreaView>
+        <SearchBar />
+        {!this.state.hasSearched
+          ? this.meetThePlant()
+          : this.searchResults()}
+        </SafeAreaView>
+      )
+    }
+// onPress={() => alert("You have pressed my buttons!")
   meetThePlant = () => (
-    <View style={{alignSelf: 'center', textAlign: 'center'}}>
+    <View style={styles.container}>
       <Text>MEET A NEW PLANT!</Text>
       <PlantItem
         title={'Plant1'}
         image={ImagePlaceholder}
-      />
+        searchNavigation={this.props.navigation}
+        />
     </View>
   )
 
   searchResults = () => (
-    <View style={{alignSelf: 'center', textAlign: 'center'}}>
+    <View style={styles.container}>
       <FlatList
         style={styles.searchResultsContainer}
         data={this.state.searchResults}
@@ -49,14 +61,4 @@ export default class Search extends Component {
     </View>
   )
 
-  render () {
-    return (
-      <SafeAreaView>
-        <SearchBar />
-        {!this.state.hasSearched
-          ? this.meetThePlant()
-          : this.searchResults()}
-      </SafeAreaView>
-    )
-  }
 }
