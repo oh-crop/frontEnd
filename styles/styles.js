@@ -45,7 +45,6 @@ export default styles = StyleSheet.create({
     width: 150,
     display: 'flex',
     justifyContent: 'center',
-    textAlign: 'center'
   },
   searchbox: {
     padding: 5,
