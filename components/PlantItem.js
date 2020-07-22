@@ -6,7 +6,10 @@ import styles from '../styles/styles';
 export default function PlantItem (props) {
   return(
     <View>
-      {/* <Image style={styles.meetAPlant} source={require(props.image)} /> */}
+      <Image
+        style={styles.meetAPlant}
+        source={{uri: props.image}}
+      />
       <Text>{props.title}</Text>
     </View>
   )
