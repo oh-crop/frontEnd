@@ -24,31 +24,31 @@ export default class Search extends Component {
   };
 
   meetThePlant = () => (
-    <SafeAreaView>
-      <PlantItem title={'Plant1'} image={ImagePlaceholder}/>
-    </SafeAreaView>
+    <PlantItem 
+    title={'Plant1'} 
+    image={ImagePlaceholder}/>
   )
 
   searchResults = () => (
-    <SafeAreaView>
-      <FlatList 
-        style={styles.searchResultsContainer}
-        data={this.state.searchResults}
-        renderItem={({item, index, separators}) => (
-          <PlantItem title={item.title} image={ImagePlaceholder}/>
-        )}
-      />
-    </SafeAreaView>
+    <FlatList 
+      style={styles.searchResultsContainer}
+      data={this.state.searchResults}
+      renderItem={({item, index, separators}) => (
+        <PlantItem 
+          title={item.title} 
+          image={ImagePlaceholder}/>
+      )}
+    />
   )
   
   render () {
     return (
-      <View>
+      <SafeAreaView>
         <SearchBar />
         {!this.state.hasSearched 
           ? this.meetThePlant()
           : this.searchResults()}
-      </View>
+      </SafeAreaView>
     )
   }
 }
