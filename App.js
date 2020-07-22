@@ -20,7 +20,7 @@ export default function App() {
   return (
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="Home"
+          initialRouteName="Search"
           tabBarOptions={{
             showLabel: false,
             activeBackgroundColor: '#f5b70f',

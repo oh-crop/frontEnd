@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, Image, TextInput, FlatList, SafeAreaView, TouchableHighlight  } from 'react-native';
+import PlantItem from '../PlantItem';
+import imagePlaceholder from '../../assets/meet-a-plant-example.jpg'
 
 import styles from '../../styles/styles';
 
@@ -19,37 +21,36 @@ export default class Search extends Component {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
     title: "Third Item",
   },],
-    hasSearched: true
+    hasSearched: false
   };
-  
-  render () {
-    if(!this.state.hasSearched) {
-      return ( 
+
+  meetThePlant = () => (
     <SafeAreaView>
       <View style={styles.searchInputContainer}>
         <TextInput style={styles.searchbox} placeholder={'Search'}/>
       </View>
-          <View>
-            <Image style={styles.meetAPlant} source={require('../../assets/meet-a-plant-example.jpg')} />
-            <Text>Meet a Plant!</Text>
-          </View>
-    </SafeAreaView>
-      )}
-    return ( 
-      <SafeAreaView>
-        <View style={styles.searchInputContainer}>
-          <TextInput style={styles.searchbox} placeholder={'Search'}/>
-        </View>
-            <FlatList 
-              style={styles.searchResultsContainer}
-              data={this.state.searchResults}
-              renderItem={({item, index, separators}) => (
-                <View style={{backgroundColor: 'white'}}>
-                  <Text>{item.title}</Text>
-                </View>
-              )}
-            />
+      <PlantItem title={'Plant1'} image={imagePlaceholder}/>
+  </SafeAreaView>
+  )
+
+  searchResults = () => (
+    <SafeAreaView>
+      <View style={styles.searchInputContainer}>
+        <TextInput style={styles.searchbox} placeholder={'Search'}/>
+      </View>
+        <FlatList 
+          style={styles.searchResultsContainer}
+          data={this.state.searchResults}
+          renderItem={({item, index, separators}) => (
+            <PlantItem title={item.title} image={imagePlaceholder}/>
+          )}
+        />
       </SafeAreaView>
-    )
-  };
+  )
+  
+  render () {
+    return !this.state.hasSearched 
+      ? this.meetThePlant()
+      : this.searchResults()
+  }
 }
