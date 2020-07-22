@@ -15,6 +15,7 @@ const SearchBar = () => (
     <View style={styles.searchButton}>
       <Button
         title='Click to Search'
+        onPress={() => alert("I'm the search button!!")}
         />
     </View>
   </View>
