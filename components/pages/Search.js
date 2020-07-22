@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import { View, Text, Image, TextInput, FlatList, SafeAreaView, TouchableHighlight  } from 'react-native';
+
 import PlantItem from '../PlantItem';
-import imagePlaceholder from '../../assets/meet-a-plant-example.jpg'
-
+import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
+import SearchBar from '../SearchBar';
 import styles from '../../styles/styles';
-
-
 
 export default class Search extends Component {
   state = {
@@ -21,36 +20,35 @@ export default class Search extends Component {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
     title: "Third Item",
   },],
-    hasSearched: false
+    hasSearched: true
   };
 
   meetThePlant = () => (
     <SafeAreaView>
-      <View style={styles.searchInputContainer}>
-        <TextInput style={styles.searchbox} placeholder={'Search'}/>
-      </View>
-      <PlantItem title={'Plant1'} image={imagePlaceholder}/>
-  </SafeAreaView>
+      <PlantItem title={'Plant1'} image={ImagePlaceholder}/>
+    </SafeAreaView>
   )
 
   searchResults = () => (
     <SafeAreaView>
-      <View style={styles.searchInputContainer}>
-        <TextInput style={styles.searchbox} placeholder={'Search'}/>
-      </View>
-        <FlatList 
-          style={styles.searchResultsContainer}
-          data={this.state.searchResults}
-          renderItem={({item, index, separators}) => (
-            <PlantItem title={item.title} image={imagePlaceholder}/>
-          )}
-        />
-      </SafeAreaView>
+      <FlatList 
+        style={styles.searchResultsContainer}
+        data={this.state.searchResults}
+        renderItem={({item, index, separators}) => (
+          <PlantItem title={item.title} image={ImagePlaceholder}/>
+        )}
+      />
+    </SafeAreaView>
   )
   
   render () {
-    return !this.state.hasSearched 
-      ? this.meetThePlant()
-      : this.searchResults()
+    return (
+      <View>
+        <SearchBar />
+        {!this.state.hasSearched 
+          ? this.meetThePlant()
+          : this.searchResults()}
+      </View>
+    )
   }
 }
