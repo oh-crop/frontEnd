@@ -9,7 +9,7 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInputContainer: {
-    // flex: 1, 
+    // flex: 1,
     marginBottom: 10,
   },
   searchResultsContainer: {
@@ -45,7 +45,6 @@ export default styles = StyleSheet.create({
     width: 150,
     display: 'flex',
     justifyContent: 'center',
-    textAlign: 'center'
   },
   searchbox: {
     padding: 5,
@@ -60,5 +59,9 @@ export default styles = StyleSheet.create({
     height: 30,
     alignSelf: 'center',
     // alignSelf moves box to middle
-  }
+  },
+  searchButton: {
+    width: 200,
+    alignSelf: 'center',
+   }
 });
