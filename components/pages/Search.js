@@ -22,7 +22,7 @@ export default class Search extends Component {
       title: "Third Item",
       },
     ],
-    hasSearched: false,
+    hasSearched: true,
   };
 
   render () {
@@ -55,7 +55,9 @@ export default class Search extends Component {
         renderItem={({item, index, separators}) => (
           <PlantItem
             title={item.title}
-            image={ImagePlaceholder}/>
+            image={ImagePlaceholder}
+            searchNavigation={this.props.navigation}
+          />
         )}
       />
     </View>
