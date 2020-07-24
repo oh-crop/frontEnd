@@ -1,15 +1,25 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, TouchableOpacity} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 
 import styles from '../../styles/styles';
 
+
 export default function MyGarden(props) {
   return (
-    <View style={styles.container}>
+    <View style={styles.myGardenContainer}>
       <Text style={{color: 'black'}}>
-        YOU MADE IT TO YOUR GARDEN!!
+        My Garden
       </Text>
-      <Button title="Go to Plant Profile Page" onPress={() => props.navigation.navigate('PlantProfilePage')}/>
+      <TouchableOpacity
+        
+        onPress={() => props.navigation.navigate('PlantProfilePage')}>
+        <View>
+        <Ionicons name="md-flower" size={40} color="black" />
+        <Text>Jimothy</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }

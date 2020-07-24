@@ -63,5 +63,8 @@ export default styles = StyleSheet.create({
   searchButton: {
     width: 200,
     alignSelf: 'center',
+   },
+   myGardenContainer: {
+     
    }
 });
