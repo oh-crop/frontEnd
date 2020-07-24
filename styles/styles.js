@@ -5,12 +5,14 @@ let styles;
 export default styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#fffefe',
+    color: '#fafafa',
     flex: 1,
     justifyContent: 'center',
   },
   searchInputContainer: {
-    backgroundColor: '#fff',
+    color: '#fafafa',
+    backgroundColor: '#fffefe',
     paddingBottom: 50,
   },
   searchResultsContainer: {
@@ -31,13 +33,15 @@ export default styles = StyleSheet.create({
   },
   searchbox: {
     alignSelf: 'center',
-    borderColor: 'dimgrey',
+    borderColor: '#1d1d1d',
+    color: '#1d1d1d',
     borderRadius: 2,
     borderWidth: 1,
+    fontSize: 18,
     height: 30,
     margin: 10,
     padding: 5,
-    shadowColor: 'black',
+    shadowColor: 'rgba(0, 0, 0, 0.05)',
     shadowOffset:{  width: 5,  height: 5,  },
     shadowOpacity: .1,
     width: 300,
@@ -51,7 +55,7 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
     margin: 10,
     padding: 15,
-    shadowColor: 'black',
+    shadowColor: 'rgba(0, 0, 0, 0.05)',
     shadowOffset:{  width: 7,  height: 7,  },
     shadowOpacity: .1,
     width: 150,
@@ -62,7 +66,7 @@ export default styles = StyleSheet.create({
   },
   goBackButton: {
     alignItems: 'center',
-    color: 'black',
+    color: '#383838',
     display: 'flex',
     fontSize: 30,
     height: '100%',
@@ -73,7 +77,6 @@ export default styles = StyleSheet.create({
   // PLANT INFO PAGE
   backgroundImg: {
     height: '100%',
-    width: 'auto',
   },
   plantInfoHeader: {
     alignItems: 'center',
@@ -83,10 +86,10 @@ export default styles = StyleSheet.create({
     width: '100%',
   },
   plantName: {
-    color: 'white',
+    color: '#fafafa',
     fontSize: 40,
   },
-  imgBackground: {
+  plantImgWrapper: {
     backgroundColor: 'rgba(255, 255, 255, .5)',
     flex: 2,
     marginBottom: -145,
@@ -123,20 +126,24 @@ export default styles = StyleSheet.create({
     paddingBottom: 50,
     paddingLeft: 10,
     paddingRight: 10,
+
+    shadowColor: 'black',
+    shadowOffset:{  width: 5,  height: 5,  },
+    shadowOpacity: .1,
+
     width: '85%',
   },
   plantAttrLabel: {
-    color: 'white',
+    color: '#fafafa',
     fontSize: 24,
     margin: 10,
-    width: '100%',
   },
   plantAttrValue: {
     color: '#E3CBB5',
     paddingLeft: 10,
   },
   buttonContainer: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f8f8f8',
     flex: 1.2,
     width: '100%',
   },
