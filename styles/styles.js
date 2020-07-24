@@ -1,11 +1,12 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native';
 
 let styles;
+
 export default styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    flex: 1,
     justifyContent: 'center',
   },
   searchInputContainer: {
@@ -16,9 +17,9 @@ export default styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   meetAPlant: {
+    alignSelf: 'center',
     height: 200,
     width: 300,
-    alignSelf: 'center',
   },
   text: {
     color: 'white',
@@ -28,34 +29,44 @@ export default styles = StyleSheet.create({
     height: 300,
     width: 300,
   },
-  button: {
-    padding: 15,
-    borderRadius: 10,
-    backgroundColor: '#5DA25B',
-    shadowOffset:{  width: 7,  height: 7,  },
-    shadowColor: 'black',
-    shadowOpacity: .1,
+  searchbox: {
+    alignSelf: 'center',
+    borderColor: 'dimgrey',
+    borderRadius: 2,
+    borderWidth: 1,
+    height: 30,
     margin: 10,
-    width: 150,
+    padding: 5,
+    shadowColor: 'black',
+    shadowOffset:{  width: 5,  height: 5,  },
+    shadowOpacity: .1,
+    width: 300,
+  },
+  // BUTTONS
+  button: {
+    backgroundColor: '#5DA25B',
+    borderRadius: 10,
     display: 'flex',
     justifyContent: 'center',
-  },
-  searchbox: {
-    padding: 5,
     margin: 10,
-    width: 300,
-    borderRadius: 2,
-    shadowOffset:{  width: 5,  height: 5,  },
+    padding: 15,
     shadowColor: 'black',
+    shadowOffset:{  width: 7,  height: 7,  },
     shadowOpacity: .1,
-    borderWidth: 1,
-    borderColor: 'dimgrey',
-    height: 30,
-    alignSelf: 'center',
+    width: 150,
   },
   searchButton: {
     alignSelf: 'center',
     width: 200,
+  },
+  goBackButton: {
+    alignItems: 'center',
+    color: 'black',
+    display: 'flex',
+    fontSize: 25,
+    height: '100%',
+    justifyContent: 'center',
+    width: '100%',
   },
   // PLANT INFO PAGE
   plantInfoHeader: {
@@ -99,5 +110,9 @@ export default styles = StyleSheet.create({
   plantAttrValue: {
     color: '#E3CBB5',
     paddingLeft: 10,
+  },
+  buttonContainer: {
+    height: 55,
+    width: '100%',
   },
 });
