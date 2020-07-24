@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { View, Text, FlatList, SafeAreaView } from 'react-native';
 
 import PlantItem from '../PlantItem';
@@ -10,16 +10,16 @@ export default class Search extends Component {
   state = {
     searchResults: [
       {
-      id: "1",
-      title: "First Item",
+        id: "1",
+        title: "First Item",
       },
       {
-      id: "2",
-      title: "Second Item",
+        id: "2",
+        title: "Second Item",
       },
       {
-      id: "3",
-      title: "Third Item",
+        id: "3",
+        title: "Third Item",
       },
     ],
     hasSearched: true,
@@ -32,20 +32,22 @@ export default class Search extends Component {
         {!this.state.hasSearched
           ? this.meetThePlant()
           : this.searchResults()}
-        </SafeAreaView>
-    )
-  }
+      </SafeAreaView>
+    );
+  };
 
   meetThePlant = () => (
     <View style={styles.container}>
-      <Text>MEET A NEW PLANT!</Text>
+      <Text>
+        MEET A NEW PLANT!
+      </Text>
       <PlantItem
         title={'Plant1'}
         image={ImagePlaceholder}
         searchNavigation={this.props.navigation}
-        />
+        tabNavigation={this.props.navigation}/>
     </View>
-  )
+  );
 
   searchResults = () => (
     <View style={styles.container}>
@@ -57,10 +59,9 @@ export default class Search extends Component {
             title={item.title}
             image={ImagePlaceholder}
             searchNavigation={this.props.navigation}
-          />
+            tabNavigation={this.props.navigation}/>
         )}
       />
     </View>
-  )
-
+  );
 }
