@@ -12,7 +12,7 @@ export default function PlantItem ({ title, image, searchNavigation }) {
           <Image
             style={styles.meetAPlant}
             source={{uri: image}}
-            />
+          />
           <Text>{title}</Text>
       </View>
     </TouchableHighlight>
