@@ -18,7 +18,7 @@ export default function TabNavigation(){
     <Tab.Navigator
       tabBarOptions={{
         showLabel: false,
-        activeBackgroundColor: '#f5b70f',
+        activeBackgroundColor: '#E6B357',
       }}
       >
       <Tab.Screen name="Search" component={SearchStackNavigator} options={{ tabBarIcon: () => searchIcon  }}/>
