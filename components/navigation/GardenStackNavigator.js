@@ -12,12 +12,8 @@ export default function GardenStackNavigator() {
       initialPage="MyGardenPage"
       screenOptions={{ headerShown: false }}
       >
-      <GardenStack.Screen
-        name="MyGardenPage"
-        component={ MyGardenPage }/>
-      <GardenStack.Screen
-        name="PlantProfilePage"
-        component={ PlantProfilePage }/>
+      <GardenStack.Screen name="MyGardenPage" component={MyGardenPage}/>
+      <GardenStack.Screen name="PlantProfilePage" component={PlantProfilePage}/>
     </GardenStack.Navigator>
   );
 }
