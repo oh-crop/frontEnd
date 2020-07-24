@@ -33,9 +33,9 @@ export default class Search extends Component {
           ? this.meetThePlant()
           : this.searchResults()}
         </SafeAreaView>
-      )
-    }
-// onPress={() => alert("You have pressed my buttons!")
+    )
+  }
+
   meetThePlant = () => (
     <View style={styles.container}>
       <Text>MEET A NEW PLANT!</Text>
