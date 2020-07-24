@@ -116,6 +116,7 @@ export default styles = StyleSheet.create({
   },
   plantInfoContent: {
     backgroundColor: 'rgba(148, 126, 104, .9)',
+    borderRadius: 20,
     height: '100%',
     justifyContent: 'flex-end',
     marginTop: -65,
