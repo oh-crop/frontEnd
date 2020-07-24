@@ -78,7 +78,7 @@ export default styles = StyleSheet.create({
    myGardenBody: {
     alignItems: 'center',
     backgroundColor: '#76480B',
-    flexDirection: 'Row',
+    flexDirection: 'row',
     flex: 3,
     justifyContent: 'center',
     flexWrap: 'wrap',
