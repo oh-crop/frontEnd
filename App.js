@@ -14,12 +14,8 @@ export default function App() {
         initialRouteName="Home"
         screenOptions={{ headerShown: false }}
         >
-        <Stack.Screen
-          name="Home"
-          component={ Landing }/>
-        <Stack.Screen
-          name="TabNavigation"
-          component={ TabNavigation }/>
+        <Stack.Screen name="Home" component={ Landing }/>
+        <Stack.Screen name="TabNavigation" component={ TabNavigation }/>
       </Stack.Navigator>
     </NavigationContainer>
   );
