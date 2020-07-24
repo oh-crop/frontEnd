@@ -64,7 +64,37 @@ export default styles = StyleSheet.create({
     width: 200,
     alignSelf: 'center',
    },
+   //My Garden Page
    myGardenContainer: {
-     
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 4,
+   },
+   myGardenHeader: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+   },
+   myGardenBody: {
+    alignItems: 'center',
+    backgroundColor: '#76480B',
+    flexDirection: 'Row',
+    flex: 3,
+    justifyContent: 'center',
+    flexWrap: 'wrap',
+   },
+   myGardenPlants: {
+    padding: 10,
+    margin: 10,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    
+   },
+   icon: {
+    textShadowColor: 'black',
+    textShadowOffset: {width: 1, height: 12},
+    textShadowRadius: 5,
+    margin: 10,
+    color: 'limegreen',
    }
 });
