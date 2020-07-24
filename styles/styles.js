@@ -9,16 +9,9 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInputContainer: {
-    // flex: 1,
     marginBottom: 10,
   },
   searchResultsContainer: {
-    // flex: 3,
-    // alignItems: 'center',
-    // borderWidth: 2,
-    // justifyContent: 'space-between',
-    // height: 1000,
-    // overflow: 'scroll',
     marginHorizontal: 20,
   },
   meetAPlant: {
@@ -58,43 +51,45 @@ export default styles = StyleSheet.create({
     borderColor: 'dimgrey',
     height: 30,
     alignSelf: 'center',
-    // alignSelf moves box to middle
   },
   searchButton: {
     width: 200,
     alignSelf: 'center',
    },
+   
    //My Garden Page
-   myGardenContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 4,
+  myGardenContainer: {
+    height: '100%',
    },
-   myGardenHeader: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  myGardenHeader: {
     flex: 1,
    },
-   myGardenBody: {
-    alignItems: 'center',
-    backgroundColor: '#76480B',
+  myGarden: {
     flexDirection: 'row',
-    flex: 3,
-    justifyContent: 'center',
     flexWrap: 'wrap',
-   },
-   myGardenPlants: {
-    padding: 10,
-    margin: 10,
-    justifyContent: 'space-around',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flex: 7,
+    },
+  myGardenBody: {
+    height: 120,
+    width: 120,
     alignItems: 'center',
-    
+    justifyContent: 'center',
    },
-   icon: {
-    textShadowColor: 'black',
+  myGardenPlants: {
+    alignItems: 'center',
+    justifyContent: 'center',
+   },
+  icon: {
+    textShadowColor: 'grey',
     textShadowOffset: {width: 1, height: 12},
     textShadowRadius: 5,
     margin: 10,
     color: 'limegreen',
-   }
+   },
+  dirtBackground: {
+    flex: 1,
+    width: '100%',
+   },
 });
