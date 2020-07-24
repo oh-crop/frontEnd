@@ -19,17 +19,20 @@ export default function PlantInfo({ navigation }) {
         source={backgroundImg}
         style={styles.backgroundImg}
         >
+
         <View style={styles.plantInfoHeader}>
           <Text style={styles.plantName}>
             Sunflower
           </Text>
         </View>
-        <View style={styles.imgBackground}></View>
+
+        <View style={styles.plantImgWrapper}></View>
         <View style={styles.plantImgContainer}>
           <Image
             style={styles.plantImg}
             source={{uri: sunflowerImg}}/>
         </View>
+        
         <View style={styles.plantInfoContentContainer}>
           <View style={styles.plantInfoContent}>
             <Text style={styles.plantAttrLabel}>
