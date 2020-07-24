@@ -1,9 +1,190 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PlantInfo Page PlantInfo Page does render 1`] = `
-<View>
-  <Text>
-    PlantInfo Component
-  </Text>
-</View>
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#5DA25B",
+        "flex": 1,
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 40,
+        }
+      }
+    >
+      DILL
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#654321",
+        "flex": 2.5,
+        "justifyContent": "center",
+        "width": "100%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "uri": Object {
+            "testUri": "../../../assets/meet-a-plant-example.jpg",
+          },
+        }
+      }
+      style={
+        Object {
+          "alignItems": "center",
+          "borderRadius": 70,
+          "height": 130,
+          "width": 130,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#654321",
+        "flex": 7,
+        "paddingLeft": 30,
+        "paddingRight": 30,
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      Lighting:
+      <Text
+        style={
+          Object {
+            "color": "#E3CBB5",
+            "paddingLeft": 10,
+          }
+        }
+      >
+        Full Sun
+      </Text>
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      How Often To Water:
+      <Text
+        style={
+          Object {
+            "color": "#E3CBB5",
+            "paddingLeft": 10,
+          }
+        }
+      >
+        Every 2 days
+      </Text>
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      Seed To Harvest:
+      <Text
+        style={
+          Object {
+            "color": "#E3CBB5",
+            "paddingLeft": 10,
+          }
+        }
+      >
+        70 Days
+      </Text>
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      Root Depth:
+      <Text
+        style={
+          Object {
+            "color": "#E3CBB5",
+            "paddingLeft": 10,
+          }
+        }
+      >
+        2 Inches
+      </Text>
+    </Text>
+    <Text
+      style={
+        Object {
+          "color": "white",
+          "fontSize": 30,
+          "margin": 10,
+          "width": "100%",
+        }
+      }
+    >
+      Perennial/Annual:
+      <Text
+        style={
+          Object {
+            "color": "#E3CBB5",
+            "paddingLeft": 10,
+          }
+        }
+      >
+        Annual
+      </Text>
+    </Text>
+  </View>
+</RCTSafeAreaView>
 `;

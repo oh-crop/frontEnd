@@ -9,7 +9,9 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInputContainer: {
-    marginBottom: 10,
+    backgroundColor: '#fff',
+    paddingBottom: 50,
+
   },
   searchResultsContainer: {
     marginHorizontal: 20,
@@ -53,7 +55,6 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
   },
   searchButton: {
-    width: 200,
     alignSelf: 'center',
    },
    
@@ -92,4 +93,43 @@ export default styles = StyleSheet.create({
     flex: 1,
     width: '100%',
    },
+  // PLANT INFO PAGE
+  plantInfoHeader: {
+    alignItems: 'center',
+    backgroundColor: '#5DA25B',
+    flex: 1,
+    justifyContent: 'center',
+    width: '100%',
+  },
+  nameText: {
+    color: 'white',
+    fontSize: 40,
+  },
+  plantIconContainer: {
+    alignItems: 'center',
+    backgroundColor: '#654321',
+    flex: 2.5,
+    justifyContent: 'center',
+    width: '100%',
+  },
+  plantIcon: {
+    alignItems: 'center',
+    borderRadius: 70,
+    height: 130,
+    width: 130,
+  },
+  plantInfoContent: {
+    alignItems: 'center',
+    backgroundColor: '#654321',
+    flex: 7,
+    paddingLeft: 30,
+    paddingRight: 30,
+    width: '100%',
+  },
+  textContent: {
+    color: 'white',
+    fontSize: 30,
+    margin: 10,
+    width: '100%',
+  },
 });
