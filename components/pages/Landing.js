@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Image, Text } from 'react-native';
 
 import styles from '../../styles/styles';
 
-export default function Landing({ navigation: { navigate } }) {
+export default function Landing({ navigation }) {
   return (
     <View style={ styles.container }>
       <Image
@@ -11,7 +11,7 @@ export default function Landing({ navigation: { navigate } }) {
         style={ styles.logo }/>
       <TouchableOpacity
         style={ styles.button }
-        onPress={() => navigate('TabNavigation', { screen: 'Search'})}
+        onPress={() => navigation.navigate('TabNavigation', { screen: 'Search'})}
         >
         <Text style={ styles.text }>
           Search Plants
@@ -19,7 +19,7 @@ export default function Landing({ navigation: { navigate } }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={ styles.button }
-        onPress={() => navigate('TabNavigation', { screen: 'Garden' })}
+        onPress={() => navigation.navigate('TabNavigation', { screen: 'Garden' })}
         >
         <Text style={ styles.text }>
           My Garden

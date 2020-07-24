@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native';
 
 import styles from '../../styles/styles';
 
-export default function MyGarden({ navigation: { navigate } }) {
+export default function MyGarden({ navigation }) {
   return (
     <View style={ styles.container }>
       <Text style={{color: 'black'}}>
@@ -11,7 +11,7 @@ export default function MyGarden({ navigation: { navigate } }) {
       </Text>
       <Button
         title= 'Go to Plant Profile Page'
-        onPress={() => navigate('PlantProfilePage')}/>
+        onPress={() => navigation.navigate('PlantProfilePage')}/>
     </View>
   );
 }
