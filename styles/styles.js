@@ -9,16 +9,10 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInputContainer: {
-    // flex: 1,
-    marginBottom: 10,
+    backgroundColor: '#fff',
+    paddingBottom: 50,
   },
   searchResultsContainer: {
-    // flex: 3,
-    // alignItems: 'center',
-    // borderWidth: 2,
-    // justifyContent: 'space-between',
-    // height: 1000,
-    // overflow: 'scroll',
     marginHorizontal: 20,
   },
   meetAPlant: {
@@ -58,10 +52,48 @@ export default styles = StyleSheet.create({
     borderColor: 'dimgrey',
     height: 30,
     alignSelf: 'center',
-    // alignSelf moves box to middle
   },
   searchButton: {
-    width: 200,
     alignSelf: 'center',
-   }
+    width: 200,
+  },
+  // PLANT INFO PAGE
+  plantInfoHeader: {
+    alignItems: 'center',
+    backgroundColor: '#5DA25B',
+    flex: 1,
+    justifyContent: 'center',
+    width: '100%',
+  },
+  nameText: {
+    color: 'white',
+    fontSize: 40,
+  },
+  plantIconContainer: {
+    alignItems: 'center',
+    backgroundColor: '#654321',
+    flex: 2.5,
+    justifyContent: 'center',
+    width: '100%',
+  },
+  plantIcon: {
+    alignItems: 'center',
+    borderRadius: 70,
+    height: 130,
+    width: 130,
+  },
+  plantInfoContent: {
+    alignItems: 'center',
+    backgroundColor: '#654321',
+    flex: 7,
+    paddingLeft: 30,
+    paddingRight: 30,
+    width: '100%',
+  },
+  textContent: {
+    color: 'white',
+    fontSize: 30,
+    margin: 10,
+    width: '100%',
+  },
 });
