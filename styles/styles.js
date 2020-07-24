@@ -65,18 +65,18 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
   },
-  nameText: {
+  plantName: {
     color: 'white',
     fontSize: 40,
   },
-  plantIconContainer: {
+  plantImgContainer: {
     alignItems: 'center',
     backgroundColor: '#654321',
     flex: 2.5,
     justifyContent: 'center',
     width: '100%',
   },
-  plantIcon: {
+  plantImg: {
     alignItems: 'center',
     borderRadius: 70,
     height: 130,
@@ -90,10 +90,14 @@ export default styles = StyleSheet.create({
     paddingRight: 30,
     width: '100%',
   },
-  textContent: {
+  plantAttrLabel: {
     color: 'white',
     fontSize: 30,
     margin: 10,
     width: '100%',
+  },
+  plantAttrValue: {
+    color: '#E3CBB5',
+    paddingLeft: 10,
   },
 });

@@ -8,42 +8,42 @@ export default function PlantInfo() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.plantInfoHeader}>
-        <Text style={styles.nameText}>DILL</Text>
+        <Text style={styles.plantName}>DILL</Text>
       </View>
-      <View style={styles.plantIconContainer}>
+      <View style={styles.plantImgContainer}>
         <Image
-          style={styles.plantIcon}
+          style={styles.plantImg}
           source={{uri: plantImg}}
         />
       </View>
       <View style={styles.plantInfoContent}>
-        <Text style={styles.textContent}>
+        <Text style={styles.plantAttrLabel}>
           Lighting:
-            <Text style={{color: '#E3CBB5', paddingLeft: 10, paddingLeft: 10}}>
+            <Text style={styles.plantAttrValue}>
               Full Sun
             </Text>
         </Text>
-        <Text style={styles.textContent}>
+        <Text style={styles.plantAttrLabel}>
           How Often To Water:
-            <Text style={{color: '#E3CBB5', paddingLeft: 10}}>
+            <Text style={styles.plantAttrValue}>
               Every 2 days
             </Text>
         </Text>
-        <Text style={styles.textContent}>
+        <Text style={styles.plantAttrLabel}>
           Seed To Harvest:
-            <Text style={{color: '#E3CBB5', paddingLeft: 10}}>
+            <Text style={styles.plantAttrValue}>
               70 Days
             </Text>
         </Text>
-        <Text style={styles.textContent}>
+        <Text style={styles.plantAttrLabel}>
           Root Depth:
-            <Text style={{color: '#E3CBB5', paddingLeft: 10}}>
+            <Text style={styles.plantAttrValue}>
               2 Inches
             </Text>
         </Text>
-        <Text style={styles.textContent}>
+        <Text style={styles.plantAttrLabel}>
           Perennial/Annual:
-            <Text style={{color: '#E3CBB5', paddingLeft: 10}}>
+            <Text style={styles.plantAttrValue}>
               Annual
             </Text>
         </Text>
