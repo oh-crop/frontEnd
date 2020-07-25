@@ -188,5 +188,19 @@ export default styles = StyleSheet.create({
     flex: 1,
     width: '100%',
   },
-  
+  // Plant Profile Page
+  plantChildName: {
+    color: '#fafafa',
+    fontSize: 20,
+  },
+  plantChoresContent: {
+    backgroundColor: 'rgba(148, 126, 104, .9)',
+    borderRadius: 10,
+    height: '70%',
+    justifyContent: 'space-around',
+    paddingTop: '25%',
+    paddingLeft: '5%',
+    paddingRight: '2%',
+    width: '85%',
+  },
 });
