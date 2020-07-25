@@ -11,9 +11,15 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInputContainer: {
+<<<<<<< HEAD
     color: '#fafafa',
     backgroundColor: '#fffefe',
     paddingBottom: 50,
+=======
+    backgroundColor: '#fff',
+    paddingBottom: 50,
+
+>>>>>>> 8d6851782c752937103517ed6c0a7bb35a7deb0d
   },
   searchResultsContainer: {
     marginHorizontal: 20,
@@ -147,4 +153,40 @@ export default styles = StyleSheet.create({
     flex: 1.2,
     width: '100%',
   },
+
+   //My Garden Page
+  myGardenContainer: {
+    height: '100%',
+   },
+  myGardenHeader: {
+    flex: 1,
+   },
+  myGarden: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flex: 7,
+    },
+  myGardenBody: {
+    height: 120,
+    width: 120,
+    alignItems: 'center',
+    justifyContent: 'center',
+   },
+  myGardenPlants: {
+    alignItems: 'center',
+    justifyContent: 'center',
+   },
+  icon: {
+    textShadowColor: 'grey',
+    textShadowOffset: {width: 1, height: 12},
+    textShadowRadius: 5,
+    margin: 10,
+    color: 'limegreen',
+   },
+  dirtBackground: {
+    flex: 1,
+    width: '100%',
+   },
 });
