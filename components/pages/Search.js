@@ -88,7 +88,7 @@ export default class Search extends Component {
 
   // axios call that will get search results when those are available... Should also be abstracted from here.
   getSearchResults = (query) => {
-    api.getPlantBySearch(query)
+    api.getPlantsBySearch(query)
     .then(response => {
       this.setState({ searchResults: [...response.data], hasSearched: true})
     })
