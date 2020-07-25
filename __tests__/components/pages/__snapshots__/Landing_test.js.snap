@@ -5,7 +5,8 @@ exports[`Landing Page Landing Page does render 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "backgroundColor": "#fff",
+      "backgroundColor": "#fffefe",
+      "color": "#fafafa",
       "flex": 1,
       "justifyContent": "center",
     }
@@ -43,7 +44,7 @@ exports[`Landing Page Landing Page does render 1`] = `
         "margin": 10,
         "opacity": 1,
         "padding": 15,
-        "shadowColor": "black",
+        "shadowColor": "rgba(0, 0, 0, 0.05)",
         "shadowOffset": Object {
           "height": 7,
           "width": 7,
@@ -83,7 +84,7 @@ exports[`Landing Page Landing Page does render 1`] = `
         "margin": 10,
         "opacity": 1,
         "padding": 15,
-        "shadowColor": "black",
+        "shadowColor": "rgba(0, 0, 0, 0.05)",
         "shadowOffset": Object {
           "height": 7,
           "width": 7,

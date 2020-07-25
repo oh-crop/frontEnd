@@ -1,9 +1,286 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PlantInfo Page PlantInfo Page does render 1`] = `
-<View>
-  <Text>
-    PlantInfo Component
-  </Text>
-</View>
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fffefe",
+      "color": "#fafafa",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessibilityIgnoresInvertColors={true}
+    style={
+      Object {
+        "height": "100%",
+      }
+    }
+  >
+    <Image
+      source={
+        Object {
+          "testUri": "../../../assets/plant_info_background.png",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "height": "100%",
+            "width": undefined,
+          },
+          undefined,
+        ]
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgba(93,162,91,.9)",
+          "flex": 1.5,
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fafafa",
+            "fontSize": 40,
+          }
+        }
+      >
+        Sunflower
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(255, 255, 255, .5)",
+          "flex": 2,
+          "marginBottom": -145,
+          "width": "100%",
+          "zIndex": -1,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 2.2,
+          "justifyContent": "center",
+          "marginTop": 40,
+          "width": "100%",
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": Object {
+              "testUri": "../../../assets/sunflower.png",
+            },
+          }
+        }
+        style={
+          Object {
+            "alignItems": "center",
+            "borderRadius": 70,
+            "height": 150,
+            "marginTop": 50,
+            "width": 150,
+          }
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 7,
+          "height": "100%",
+          "width": "100%",
+          "zIndex": -1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "rgba(148, 126, 104, .9)",
+            "borderRadius": 20,
+            "height": "100%",
+            "justifyContent": "flex-end",
+            "marginTop": -65,
+            "paddingBottom": 50,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "shadowColor": "black",
+            "shadowOffset": Object {
+              "height": 5,
+              "width": 5,
+            },
+            "shadowOpacity": 0.1,
+            "width": "85%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "#fafafa",
+              "fontSize": 24,
+              "margin": 10,
+            }
+          }
+        >
+          Lighting:
+          <Text
+            style={
+              Object {
+                "color": "#E3CBB5",
+                "paddingLeft": 10,
+              }
+            }
+          >
+            Full Sun
+          </Text>
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#fafafa",
+              "fontSize": 24,
+              "margin": 10,
+            }
+          }
+        >
+          How Often To Water:
+          <Text
+            style={
+              Object {
+                "color": "#E3CBB5",
+                "paddingLeft": 10,
+              }
+            }
+          >
+            Every 2 days
+          </Text>
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#fafafa",
+              "fontSize": 24,
+              "margin": 10,
+            }
+          }
+        >
+          Seed To Harvest:
+          <Text
+            style={
+              Object {
+                "color": "#E3CBB5",
+                "paddingLeft": 10,
+              }
+            }
+          >
+            70 Days
+          </Text>
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#fafafa",
+              "fontSize": 24,
+              "margin": 10,
+            }
+          }
+        >
+          Root Depth:
+          <Text
+            style={
+              Object {
+                "color": "#E3CBB5",
+                "paddingLeft": 10,
+              }
+            }
+          >
+            2 Inches
+          </Text>
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#fafafa",
+              "fontSize": 24,
+              "margin": 10,
+            }
+          }
+        >
+          Perennial/Annual:
+          <Text
+            style={
+              Object {
+                "color": "#E3CBB5",
+                "paddingLeft": 10,
+              }
+            }
+          >
+            Annual
+          </Text>
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#f8f8f8",
+          "flex": 1.2,
+          "opacity": 1,
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "alignItems": "center",
+            "color": "#383838",
+            "display": "flex",
+            "fontSize": 30,
+            "height": "100%",
+            "justifyContent": "center",
+            "width": "100%",
+          }
+        }
+      >
+        Go Back to Search
+      </Text>
+    </View>
+  </View>
+</RCTSafeAreaView>
 `;

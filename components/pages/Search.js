@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, FlatList, SafeAreaView, Scrollview } from 'react-native';
 
+
 import PlantItem from '../PlantItem';
 import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
 import SearchBar from '../SearchBar';
@@ -25,22 +26,24 @@ export default class Search extends Component {
         <SearchBar />
         { !this.state.hasSearched
           ? this.meetThePlant()
-          : this.searchResults() }
+          : this.searchResults()}
       </SafeAreaView>
-    )
-  }
+    );
+  };
 
   // this method will render to the page if the 'hasSearched' toggle is set to false
   meetThePlant = () => (
     <View style={styles.container}>
-      <Text>MEET A NEW PLANT!</Text>
+      <Text>
+        MEET A NEW PLANT!
+      </Text>
       <PlantItem
         title={this.state.randomPlant.plant_type}
         image={this.state.randomPlant.plant_image}
         searchNavigation={this.props.navigation}
-        />
+        tabNavigation={this.props.navigation}/>
     </View>
-  )
+  );
 
   searchResults = () => (
     <FlatList
@@ -48,7 +51,7 @@ export default class Search extends Component {
       data={this.state.searchResults}
       keyExtractor={item => `${item.id}`}
       renderItem={this.renderPlantItem}
-      />
+    />
   )
 
   renderPlantItem = ({ item }) => (
@@ -56,6 +59,7 @@ export default class Search extends Component {
       title={item.plant_type}
       image={item.plant_image}
       searchNavigation={this.props.navigation}
+      tabNavigation={this.props.navigation}
     />
   )
 
@@ -92,7 +96,4 @@ export default class Search extends Component {
       console.log(err)
     })
   }
-
-
-
 }
