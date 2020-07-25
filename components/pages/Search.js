@@ -31,6 +31,14 @@ export default class Search extends Component {
     );
   };
 
+  renderLoader = () => {
+    if (!this.state.searchResults.length && this.state.hasSearched) {
+      return <LoadingPage />
+    } else if (!this.state.randomPlant) {
+      return <LoadingPage />
+    }
+  }
+
   // this method will render to the page if the 'hasSearched' toggle is set to false
   meetThePlant = () => (
     <View style={styles.container}>
