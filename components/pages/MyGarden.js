@@ -5,7 +5,7 @@ import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import styles from '../../styles/styles';
 import dirtBackground from '../../assets/dirt.png';
 
-export default function MyGarden(props) {
+export default function MyGarden({ navigation }) {
   return (
     <SafeAreaView 
       style={styles.myGardenContainer}>
