@@ -6,27 +6,27 @@ import PlantItem from '../PlantItem';
 import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
 import SearchBar from '../SearchBar';
 import styles from '../../styles/styles';
-import api from '../../api/plantAPI'
+import api from '../../api/plantAPI';
+import LoadingPage from '../Loading';
 
 export default class Search extends Component {
-
   state = {
     searchResults: [],
     randomPlant: {},
-    hasSearched: true,
+    hasSearched: false,
   };
 
   componentDidMount() {
     this.gatherInfo('tomato')
-  }
+  };
 
   render () {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <SearchBar />
         { !this.state.hasSearched
           ? this.meetThePlant()
-          : this.searchResults()}
+          : this.searchResults() }
       </SafeAreaView>
     );
   };
@@ -38,10 +38,10 @@ export default class Search extends Component {
         MEET A NEW PLANT!
       </Text>
       <PlantItem
+        props={this.stat}
         title={this.state.randomPlant.plant_type}
         image={this.state.randomPlant.plant_image}
-        searchNavigation={this.props.navigation}
-        tabNavigation={this.props.navigation}/>
+        navigation={this.props.navigation}/>
     </View>
   );
 
@@ -58,9 +58,7 @@ export default class Search extends Component {
     <PlantItem
       title={item.plant_type}
       image={item.plant_image}
-      searchNavigation={this.props.navigation}
-      tabNavigation={this.props.navigation}
-    />
+      navigation={this.props.navigation}/>
   )
 
   // this method will render to the page if the 'hasSearched' toggle is set to false
@@ -88,7 +86,7 @@ export default class Search extends Component {
 
   // axios call that will get search results when those are available... Should also be abstracted from here.
   getSearchResults = (query) => {
-    api.getPlantBySearch(query)
+    api.getPlantsBySearch(query)
     .then(response => {
       this.setState({ searchResults: [...response.data], hasSearched: true})
     })
