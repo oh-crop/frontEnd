@@ -13,17 +13,32 @@ export default class Search extends Component {
   state = {
     searchResults: [],
     randomPlant: {},
-    hasSearched: true,
+    hasSearched: false,
+    query: ''
   };
 
+  setQuery = (event) => {
+    this.setState({query: event.target.value})
+  }
+
   componentDidMount() {
-    this.gatherInfo('tomato')
+    this.gatherInfo()
+  }
+
+  gatherQuery = () => {
+    this.setState({hasSearched: true})
+    this.gatherInfo(this.state.query)
+    if (this.state.searchResults.length === 0) {
+      this.setState({searchResults: [{plant_type: 'Oh Crop! We cannot find the plant'}]})
+    }
   }
 
   render () {
     return (
       <SafeAreaView>
-        <SearchBar />
+        <SearchBar 
+          setQuery={this.setQuery}
+          searchButtonClick={this.gatherQuery} />
         { !this.state.hasSearched
           ? this.meetThePlant()
           : this.searchResults()}
@@ -79,7 +94,7 @@ export default class Search extends Component {
   getRandomPlant = () => {
     api.getRandomPlant()
     .then(response => {
-      this.setState({ randomPlant: response.data, hasSearched: false } )
+      this.setState({ randomPlant: response.data} )
     })
     .catch(err => {
       console.log(err)

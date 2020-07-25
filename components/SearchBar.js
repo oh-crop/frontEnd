@@ -6,28 +6,25 @@ import styles from '../styles/styles';
 
 const searchIcon = <Ionicons name="md-search" size={40} color="black" />
 
-const SearchBar = () => {
-  const [query, setQuery] = useState('');
-
-  const searchInput = (event) => {
-    setQuery( event.target.value)
-  }
-
-  return (
-    <View style={styles.searchInputContainer}>
-      <TextInput
-        style={styles.searchbox}
-          placeholder={'Search'}
-          onChange={() => searchInput(event)}
-      />
-      <View style={styles.searchButton}>
-        <Button
-          title='Click to Search'
-          onPress={() => alert("I'm the search button!")}
+class SearchBar extends Component {
+  
+  render () {
+    return (
+      <View style={styles.searchInputContainer}>
+        <TextInput
+          style={styles.searchbox}
+            placeholder={'Search'}
+            onChange={() => this.props.setQuery(event)}
         />
+        <View style={styles.searchButton}>
+          <Button
+            title='Click to Search'
+            onPress={() => this.props.searchButtonClick(event)}
+          />
+        </View>
       </View>
-    </View>
-  )
+    )
+  }
 }
 
 export default SearchBar;
