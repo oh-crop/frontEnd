@@ -11,15 +11,9 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   searchInputContainer: {
-<<<<<<< HEAD
     color: '#fafafa',
     backgroundColor: '#fffefe',
     paddingBottom: 50,
-=======
-    backgroundColor: '#fff',
-    paddingBottom: 50,
-
->>>>>>> 8d6851782c752937103517ed6c0a7bb35a7deb0d
   },
   searchResultsContainer: {
     marginHorizontal: 20,
