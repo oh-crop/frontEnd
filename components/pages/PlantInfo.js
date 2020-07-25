@@ -21,7 +21,6 @@ export default class PlantInfo extends Component {
   
   componentDidMount() {
     this.getPlantId(this.props.route.params.id)
-    console.log('props', this.props.route.params.id)
   }
 
   getPlantId = (id) => {
@@ -66,6 +65,16 @@ export default class PlantInfo extends Component {
               </Text>
             </View>
           </View>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+              this.props.navigation.navigate('NamePlant', {id: plantData.id})}
+            }>
+            <View>
+              <Text 
+              style={styles.text}>Add Plant to Garden</Text>
+            </View>
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={() => {

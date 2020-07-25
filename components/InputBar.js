@@ -6,20 +6,20 @@ import styles from '../styles/styles';
 
 const searchIcon = <Ionicons name="md-search" size={40} color="black" />
 
-class SearchBar extends Component {
+class InputBar extends Component {
   
   render () {
     return (
       <View style={styles.searchInputContainer}>
         <TextInput
           style={styles.searchbox}
-            placeholder={'Search'}
-            onChange={() => this.props.setQuery(event)}
+            placeholder={this.props.placeholder}
+            onChange={() => this.props.setValue(event)}
         />
         <View style={styles.searchButton}>
           <Button
-            title='Click to Search'
-            onPress={() => this.props.searchButtonClick(event)}
+            title={this.props.buttonText}
+            onPress={() => this.props.inputButtonClick(event)}
           />
         </View>
       </View>
@@ -27,4 +27,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default InputBar;

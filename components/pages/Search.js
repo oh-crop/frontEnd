@@ -4,7 +4,7 @@ import { View, Text, FlatList, SafeAreaView, Scrollview } from 'react-native';
 
 import PlantItem from '../PlantItem';
 import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
-import SearchBar from '../SearchBar';
+import InputBar from '../InputBar';
 import styles from '../../styles/styles';
 import api from '../../api/plantAPI'
 
@@ -33,9 +33,11 @@ export default class Search extends Component {
   render () {
     return (
       <SafeAreaView>
-        <SearchBar 
-          setQuery={this.setQuery}
-          searchButtonClick={this.gatherQuery} />
+        <InputBar 
+          setValue={this.setQuery}
+          inputButtonClick={this.gatherQuery}
+          placeholder={'Search'}
+          buttonText={'Click to Search'}/>
         { !this.state.hasSearched
           ? this.meetThePlant()
           : this.searchResults()}
