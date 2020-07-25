@@ -17,20 +17,17 @@ export default class Search extends Component {
     query: ''
   };
 
-  setQuery = (event) => {
-    this.setState({query: event.target.value})
-  }
-
   componentDidMount() {
     this.gatherInfo()
   }
 
-  gatherQuery = () => {
-    this.setState({hasSearched: true})
-    this.gatherInfo(this.state.query)
-    if (this.state.searchResults.length === 0) {
-      this.setState({searchResults: [{plant_type: 'Oh Crop! We cannot find the plant'}]})
-    }
+  setQuery = (event) => {
+    this.setState({query: event.target.value})
+  }
+
+  gatherQuery = async () => {
+    await this.setState({hasSearched: true})
+    await this.gatherInfo(this.state.query)
   }
 
   render () {
@@ -46,7 +43,6 @@ export default class Search extends Component {
     );
   };
 
-  // this method will render to the page if the 'hasSearched' toggle is set to false
   meetThePlant = () => (
     <View style={styles.container}>
       <Text>
@@ -55,6 +51,7 @@ export default class Search extends Component {
       <PlantItem
         title={this.state.randomPlant.plant_type}
         image={this.state.randomPlant.plant_image}
+        id={this.state.randomPlant.id}
         searchNavigation={this.props.navigation}
         tabNavigation={this.props.navigation}/>
     </View>
@@ -73,24 +70,20 @@ export default class Search extends Component {
     <PlantItem
       title={item.plant_type}
       image={item.plant_image}
+      id={item.id}
       searchNavigation={this.props.navigation}
       tabNavigation={this.props.navigation}
     />
   )
 
-  // this method will render to the page if the 'hasSearched' toggle is set to false
-
-  //We should call this before return in the render to populate the info we need
   gatherInfo = (query) => {
     if (this.state.hasSearched) {
-      //this argument needs to be made dynamic by what is coming through the search bar.
       this.getSearchResults(query)
     } else {
       this.getRandomPlant()
     }
   }
 
-  // axios call that gets a random plant... Should be abstracted from here     ....This is old now, the way I did it before abstraction....
   getRandomPlant = () => {
     api.getRandomPlant()
     .then(response => {
@@ -101,7 +94,6 @@ export default class Search extends Component {
     })
   }
 
-  // axios call that will get search results when those are available... Should also be abstracted from here.
   getSearchResults = (query) => {
     api.getPlantsBySearch(query)
     .then(response => {

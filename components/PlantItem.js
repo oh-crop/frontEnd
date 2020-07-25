@@ -3,11 +3,11 @@ import { View, Text, Image, TouchableHighlight} from 'react-native';
 
 import styles from '../styles/styles';
 
-export default function PlantItem ({ title, image, searchNavigation, tabNavigation: {  dangerouslyGetParent} }) {
+export default function PlantItem ({ title, image, id, searchNavigation, tabNavigation: {  dangerouslyGetParent} }) {
   return (
     <TouchableHighlight
       onPress={() => {
-        searchNavigation.navigate('PlantInfoPage');
+        searchNavigation.navigate('PlantInfoPage', {id: id});
         dangerouslyGetParent().setOptions({ tabBarVisible: false });
       }}
       >
