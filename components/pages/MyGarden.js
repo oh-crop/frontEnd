@@ -11,7 +11,11 @@ export default class MyGarden extends Component {
     gardenPlants: [],
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    this.getAllGardenPlants()
+  }
+
+  componentDidUpdate() {
     this.getAllGardenPlants()
   }
 

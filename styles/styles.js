@@ -94,7 +94,7 @@ export default styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
   },
-  plantName: {
+  plantChildName: {
     color: '#fafafa',
     fontSize: 40,
   },
@@ -189,7 +189,7 @@ export default styles = StyleSheet.create({
     width: '100%',
   },
   // Plant Profile Page
-  plantChildName: {
+  plantName: {
     color: '#fafafa',
     fontSize: 20,
   },

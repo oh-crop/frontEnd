@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  Button
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -24,23 +25,35 @@ export default class PlantProfile extends Component {
   }
 
   getPlantInfo = (id) => {
-
     api.getGardenPlantById(id)
     .then(response => this.setState({plantInfo: response.data}))
     .catch(err => console.log(err))
   }
 
+  deletePlantFromGarden = (id) => {
+    api.deleteGardenPlant(id)
+    .then(response => alert(`${response.data.plant_name} has now been deleted!`))
+    .catch(err => console.log(err))
+  }
+
+  deletePlant = async (id) => {
+    await this.deletePlantFromGarden(id)
+    await this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
+    await this.props.navigation.navigate('MyGardenPage')
+  }
+
   render () {
-    console.log('props', this.props)
+    console.log('plantInfo', this.state.plantInfo)
     return (
       <SafeAreaView style={styles.container}>
         <ImageBackground source={backgroundImg} style={styles.greenCropBackground}>
           <View style={styles.plantInfoHeader}>
-            <Text style={styles.plantName}>{this.state.plantInfo.plant_type}</Text>
             <Text style={styles.plantChildName}>{this.state.plantInfo.plant_name}</Text>
+            <Text style={styles.plantName}>{this.state.plantInfo.plant_type}</Text>
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
+          <Button title={'Click when you watered'} />
           {/* this image was removed and the icon was added - we can put the picture back once the image comes from API*/}
             <MaterialCommunityIcons
               style={styles.icon}
@@ -60,6 +73,9 @@ export default class PlantProfile extends Component {
               <Text style={styles.plantAttrLabel}>Harvest in:</Text>
               <Text style={styles.plantAttrValue}>200 Days</Text>
             </View>
+            <Button
+              onPress={() => this.deletePlant(this.state.plantInfo.gardenplant_id)}
+              title={'Click to delete your plant from the garden'} />
           </View>
           <TouchableOpacity
             style={styles.backButtonContainer}
