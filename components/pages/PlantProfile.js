@@ -24,6 +24,10 @@ export default class PlantProfile extends Component {
     this.getPlantInfo(this.props.route.params.id);
   }
 
+  componentDidUpdate() {
+    this.getPlantInfo(this.props.route.params.id);
+  }
+
   getPlantInfo = (id) => {
     api.getGardenPlantById(id)
     .then(response => this.setState({plantInfo: response.data}))
@@ -42,6 +46,12 @@ export default class PlantProfile extends Component {
     await this.props.navigation.navigate('MyGardenPage')
   }
 
+  waterPlant = (id) => {
+    api.waterPlant(id)
+    .then(response => {})
+    .catch(err => console.log(err))
+  }
+
   render () {
     console.log('plantInfo', this.state.plantInfo)
     return (
@@ -53,7 +63,9 @@ export default class PlantProfile extends Component {
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
-          <Button title={'Click when you watered'} />
+          <Button
+            onPress={() => this.waterPlant(this.state.plantInfo.gardenplant_id)}
+            title={"Click when you've watered"} />
           {/* this image was removed and the icon was added - we can put the picture back once the image comes from API*/}
             <MaterialCommunityIcons
               style={styles.icon}

@@ -31,6 +31,9 @@ export default {
   deleteGardenPlant: (id) => 
   connection.delete(`/garden/plants/${id}`),
 
+  waterPlant: (id) => 
+  connection.post(`/garden/water?garden_plant_id=${id}`),
+
   practice: () =>
   axios.get('https://jsonplaceholder.typicode.com/photos')
 
