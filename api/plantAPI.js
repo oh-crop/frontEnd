@@ -25,6 +25,9 @@ export default {
   getAllGardenPlants: () =>
   connection.get('/garden'),
 
+  getGardenPlantById: (id) => 
+  connection.get(`/garden/plants/${id}`),
+
   practice: () =>
   axios.get('https://jsonplaceholder.typicode.com/photos')
 
