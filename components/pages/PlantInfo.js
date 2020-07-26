@@ -69,7 +69,7 @@ export default class PlantInfo extends Component {
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-            style={style.backButtonContainer}
+            style={styles.backButtonContainer}
             onPress={() => {
               this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
               this.props.navigation.navigate('SearchPage')}

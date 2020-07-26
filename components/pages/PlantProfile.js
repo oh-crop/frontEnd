@@ -10,7 +10,7 @@ import {
 
 import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
-import sunflowerImg from '../../assets/sunflower.jpg';
+
 
 export default function PlantProfile({ navigation }) {
   return (
@@ -22,7 +22,8 @@ export default function PlantProfile({ navigation }) {
         </View>
         <View style={styles.transparentSubHeader}></View>
         <View style={styles.plantImgContainer}>
-          <Image style={styles.plantImg} source={{uri: sunflowerImg}}/>
+        {/* this image source needs to be updated to retrieve the image from the API*/}
+          <Image style={styles.plantImg} />
         </View>
         <View style={styles.plantContentContainer}>
           <View style={styles.plantChoresContent}>
