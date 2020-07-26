@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableHighlight} from 'react-native';
+import { View, Text, TouchableOpacity} from 'react-native';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 
 import styles from '../styles/styles';
 
-export default function GardenPlant ({ title, image, navigation, navigation: { dangerouslyGetParent } }) {
+export default function GardenPlant ({ info, navigation, navigation: { dangerouslyGetParent } }) {
+  console.log(info)
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       style={styles.myGardenBody}
       onPress={() => {
         navigation.navigate('PlantProfilePage');
@@ -18,8 +19,8 @@ export default function GardenPlant ({ title, image, navigation, navigation: { d
           name="flower"
           size={40} />
 
-        <Text style={styles.text}>Jimothy</Text>
+        <Text style={styles.text}>{info.plant_name}</Text>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 }

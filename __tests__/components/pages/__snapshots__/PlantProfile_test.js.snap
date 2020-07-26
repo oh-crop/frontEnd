@@ -7,7 +7,6 @@ exports[`PlantProfile Page PlantProfile Page does render 1`] = `
     Object {
       "alignItems": "center",
       "backgroundColor": "#fffefe",
-      "color": "#fafafa",
       "flex": 1,
       "justifyContent": "center",
     }
@@ -99,13 +98,6 @@ exports[`PlantProfile Page PlantProfile Page does render 1`] = `
       }
     >
       <Image
-        source={
-          Object {
-            "uri": Object {
-              "testUri": "../../../assets/sunflower.jpg",
-            },
-          }
-        }
         style={
           Object {
             "borderColor": "orange",
