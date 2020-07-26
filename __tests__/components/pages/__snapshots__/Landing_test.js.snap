@@ -6,7 +6,6 @@ exports[`Landing Page Landing Page does render 1`] = `
     Object {
       "alignItems": "center",
       "backgroundColor": "#fffefe",
-      "color": "#fafafa",
       "flex": 1,
       "justifyContent": "center",
     }
