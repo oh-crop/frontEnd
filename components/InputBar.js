@@ -9,17 +9,18 @@ const searchIcon = <Ionicons name="md-search" size={40} color="black" />
 class InputBar extends Component {
   
   render () {
+    
     return (
       <View style={styles.searchInputContainer}>
         <TextInput
           style={styles.searchbox}
             placeholder={this.props.placeholder}
-            onChange={() => this.props.setValue(event)}
+            onChangeText={(text) => this.props.setValue(text)}
         />
         <View style={styles.searchButton}>
           <Button
             title={this.props.buttonText}
-            onPress={() => this.props.inputButtonClick(event)}
+            onPress={() => this.props.inputButtonClick()}
           />
         </View>
       </View>

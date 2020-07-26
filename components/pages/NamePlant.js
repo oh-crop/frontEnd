@@ -10,12 +10,14 @@ export default class NamePlant extends Component {
     name: ''
   }
 
-  setName = (e) => {
-    this.setState({name: e.target.value})
+  setName = (text) => {
+    this.setState({name: text})
   }
 
   addPlant = () => {
-    this.addPlantToGarden(this.props.route.params.id, this.state.name) 
+    this.addPlantToGarden(this.props.route.params.id, this.state.name)
+    this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
+    this.props.navigation.navigate('SearchPage')
   }
 
   addPlantToGarden = (id, name) => {
@@ -26,22 +28,24 @@ export default class NamePlant extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Give your new crop a name</Text>
-        <InputBar 
-          placeholder={'Enter plant name'}
-          buttonText={'Add Plant'}
-          setValue={this.setName}
-          inputButtonClick={this.addPlant}
-          />
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => {
-            this.props.navigation.goBack()}
-          }>
-          <Text style={styles.goBackButton}>Go Back</Text>
-        </TouchableOpacity>
-      </View>
+      <SafeAreaView>
+        <View>
+          <Text>Give your new crop a name</Text>
+          <InputBar 
+            placeholder={'Enter plant name'}
+            buttonText={'Add Plant'}
+            setValue={this.setName}
+            inputButtonClick={this.addPlant}
+            />
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={() => {
+              this.props.navigation.goBack()}
+            }>
+            <Text style={styles.goBackButton}>Go Back</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     )
   }
 }

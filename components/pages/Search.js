@@ -21,8 +21,8 @@ export default class Search extends Component {
     this.gatherInfo()
   }
 
-  setQuery = (event) => {
-    this.setState({query: event.target.value})
+  setQuery = (text) => {
+    this.setState({query: text})
   }
 
   gatherQuery = async () => {

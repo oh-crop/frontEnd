@@ -22,7 +22,6 @@ export default {
   addToMyGarden: (id, name) => 
   connection.post(`/garden?plant_id=${id}&plant_name=${name}`),
   
-
   practice: () =>
   axios.get('https://jsonplaceholder.typicode.com/photos')
 
