@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableHighlight} from 'react-native';
 
 import styles from '../styles/styles';
 
-export default function PlantItem ({ title, image, navigation }) {
+export default function PlantItem ({ title, image, navigation, id }) {
   return (
     <TouchableHighlight
       onPress={() => {

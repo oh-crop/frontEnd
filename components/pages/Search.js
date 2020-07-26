@@ -61,7 +61,6 @@ export default class Search extends Component {
         MEET A NEW PLANT!
       </Text>
       <PlantItem
-        props={this.stat}
         title={this.state.randomPlant.plant_type}
         image={this.state.randomPlant.plant_image}
         id={this.state.randomPlant.id}
