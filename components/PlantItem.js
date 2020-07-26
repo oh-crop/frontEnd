@@ -3,19 +3,17 @@ import { View, Text, Image, TouchableHighlight} from 'react-native';
 
 import styles from '../styles/styles';
 
-export default function PlantItem ({ title, image, id, searchNavigation, tabNavigation: {  dangerouslyGetParent} }) {
+export default function PlantItem ({ title, image, navigation }) {
   return (
     <TouchableHighlight
       onPress={() => {
-        searchNavigation.navigate('PlantInfoPage', {id: id});
-        dangerouslyGetParent().setOptions({ tabBarVisible: false });
-      }}
-      >
+        navigation.navigate('PlantInfoPage', {id: id});
+        navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false });
+      }} >
+  
       <View>
-        <Image
-          style={styles.meetAPlant}
-          source={{uri: image}}/>
-        <Text>{title}</Text>
+        <Image style={styles.meetAPlant} source={{uri: image}}/>
+        <Text>{ title }</Text>
       </View>
     </TouchableHighlight>
   );

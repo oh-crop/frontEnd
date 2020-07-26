@@ -6,10 +6,10 @@ import PlantItem from '../PlantItem';
 import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
 import InputBar from '../InputBar';
 import styles from '../../styles/styles';
-import api from '../../api/plantAPI'
+import api from '../../api/plantAPI';
+import LoadingPage from '../Loading';
 
 export default class Search extends Component {
-
   state = {
     searchResults: [],
     randomPlant: {},
@@ -32,7 +32,7 @@ export default class Search extends Component {
 
   render () {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
         <InputBar 
           setValue={this.setQuery}
           inputButtonClick={this.gatherQuery}
@@ -40,10 +40,20 @@ export default class Search extends Component {
           buttonText={'Click to Search'}/>
         { !this.state.hasSearched
           ? this.meetThePlant()
-          : this.searchResults()}
+          : this.searchResults() }
       </SafeAreaView>
     );
   };
+
+  renderLoader = () => {
+    if (!this.state.searchResults.length && this.state.hasSearched) {
+      return <LoadingPage />
+    } else if (!this.state.randomPlant) {
+      return <LoadingPage />
+    }
+  }
+
+  // this method will render to the page if the 'hasSearched' toggle is set to false
 
   meetThePlant = () => (
     <View style={styles.container}>
@@ -51,11 +61,11 @@ export default class Search extends Component {
         MEET A NEW PLANT!
       </Text>
       <PlantItem
+        props={this.stat}
         title={this.state.randomPlant.plant_type}
         image={this.state.randomPlant.plant_image}
         id={this.state.randomPlant.id}
-        searchNavigation={this.props.navigation}
-        tabNavigation={this.props.navigation}/>
+        navigation={this.props.navigation}/>
     </View>
   );
 
@@ -73,9 +83,7 @@ export default class Search extends Component {
       title={item.plant_type}
       image={item.plant_image}
       id={item.id}
-      searchNavigation={this.props.navigation}
-      tabNavigation={this.props.navigation}
-    />
+      navigation={this.props.navigation}/>
   )
 
   gatherInfo = (query) => {
