@@ -17,14 +17,15 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
     accessibilityIgnoresInvertColors={true}
     style={
       Object {
-        "height": "100%",
+        "flex": 1,
+        "width": "100%",
       }
     }
   >
     <Image
       source={
         Object {
-          "testUri": "../../../assets/plant_info_background.png",
+          "testUri": "../../../assets/plant_info_background.jpg",
         }
       }
       style={
@@ -37,8 +38,8 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
             "top": 0,
           },
           Object {
-            "height": "100%",
-            "width": undefined,
+            "height": undefined,
+            "width": "100%",
           },
           undefined,
         ]
@@ -49,9 +50,8 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
         Object {
           "alignItems": "center",
           "backgroundColor": "rgba(93,162,91,.9)",
-          "flex": 1.5,
+          "flex": 2,
           "justifyContent": "center",
-          "width": "100%",
         }
       }
     >
@@ -70,10 +70,9 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
       style={
         Object {
           "backgroundColor": "rgba(255, 255, 255, .5)",
-          "flex": 2,
-          "marginBottom": -145,
+          "flex": 2.5,
+          "marginBottom": "-20%",
           "width": "100%",
-          "zIndex": -1,
         }
       }
     />
@@ -81,10 +80,11 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "flex": 2.2,
           "justifyContent": "center",
-          "marginTop": 40,
+          "marginBottom": "-10%",
+          "marginTop": "-5%",
           "width": "100%",
+          "zIndex": 1,
         }
       }
     >
@@ -92,17 +92,17 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
         source={
           Object {
             "uri": Object {
-              "testUri": "../../../assets/sunflower.png",
+              "testUri": "../../../assets/sunflower.jpg",
             },
           }
         }
         style={
           Object {
-            "alignItems": "center",
-            "borderRadius": 70,
-            "height": 150,
-            "marginTop": 50,
-            "width": 150,
+            "borderColor": "orange",
+            "borderRadius": 100,
+            "borderWidth": 3,
+            "height": 120,
+            "width": 120,
           }
         }
       />
@@ -111,10 +111,11 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
       style={
         Object {
           "alignItems": "center",
-          "flex": 7,
+          "flex": 8,
           "height": "100%",
+          "marginBottom": "10%",
+          "marginTop": "-10%",
           "width": "100%",
-          "zIndex": -1,
         }
       }
     >
@@ -122,19 +123,12 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
         style={
           Object {
             "backgroundColor": "rgba(148, 126, 104, .9)",
-            "borderRadius": 20,
+            "borderRadius": 10,
             "height": "100%",
-            "justifyContent": "flex-end",
-            "marginTop": -65,
-            "paddingBottom": 50,
-            "paddingLeft": 10,
-            "paddingRight": 10,
-            "shadowColor": "black",
-            "shadowOffset": Object {
-              "height": 5,
-              "width": 5,
-            },
-            "shadowOpacity": 0.1,
+            "justifyContent": "space-around",
+            "paddingLeft": "5%",
+            "paddingRight": "2%",
+            "paddingTop": "25%",
             "width": "85%",
           }
         }
@@ -142,107 +136,112 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
         <Text
           style={
             Object {
-              "color": "#fafafa",
+              "color": "#E3CBB5",
               "fontSize": 24,
-              "margin": 10,
             }
           }
         >
           Lighting:
-          <Text
-            style={
-              Object {
-                "color": "#E3CBB5",
-                "paddingLeft": 10,
-              }
-            }
-          >
-            Full Sun
-          </Text>
         </Text>
         <Text
           style={
             Object {
               "color": "#fafafa",
+              "fontSize": 22,
+              "marginBottom": "15%",
+              "marginTop": "12%",
+            }
+          }
+        >
+          Full Sun
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#E3CBB5",
               "fontSize": 24,
-              "margin": 10,
             }
           }
         >
           How Often To Water:
-          <Text
-            style={
-              Object {
-                "color": "#E3CBB5",
-                "paddingLeft": 10,
-              }
-            }
-          >
-            Every 2 days
-          </Text>
         </Text>
         <Text
           style={
             Object {
               "color": "#fafafa",
+              "fontSize": 22,
+              "marginBottom": "15%",
+              "marginTop": "12%",
+            }
+          }
+        >
+          Every 2 days
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#E3CBB5",
               "fontSize": 24,
-              "margin": 10,
             }
           }
         >
           Seed To Harvest:
-          <Text
-            style={
-              Object {
-                "color": "#E3CBB5",
-                "paddingLeft": 10,
-              }
-            }
-          >
-            70 Days
-          </Text>
         </Text>
         <Text
           style={
             Object {
               "color": "#fafafa",
+              "fontSize": 22,
+              "marginBottom": "15%",
+              "marginTop": "12%",
+            }
+          }
+        >
+          70 Days
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#E3CBB5",
               "fontSize": 24,
-              "margin": 10,
             }
           }
         >
           Root Depth:
-          <Text
-            style={
-              Object {
-                "color": "#E3CBB5",
-                "paddingLeft": 10,
-              }
-            }
-          >
-            2 Inches
-          </Text>
         </Text>
         <Text
           style={
             Object {
               "color": "#fafafa",
-              "fontSize": 24,
-              "margin": 10,
+              "fontSize": 22,
+              "marginBottom": "15%",
+              "marginTop": "12%",
             }
           }
         >
-          Perennial/Annual:
-          <Text
-            style={
-              Object {
-                "color": "#E3CBB5",
-                "paddingLeft": 10,
-              }
+          2 Inches
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#E3CBB5",
+              "fontSize": 24,
             }
-          >
-            Annual
-          </Text>
+          }
+        >
+          Plant Lifecycle:
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "#fafafa",
+              "fontSize": 22,
+              "marginBottom": "15%",
+              "marginTop": "12%",
+            }
+          }
+        >
+          Annual
         </Text>
       </View>
     </View>
@@ -258,23 +257,19 @@ exports[`PlantInfo Page PlantInfo Page does render 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
+          "alignItems": "center",
           "backgroundColor": "#f8f8f8",
-          "flex": 1.2,
+          "flex": 1.5,
+          "justifyContent": "center",
           "opacity": 1,
-          "width": "100%",
         }
       }
     >
       <Text
         style={
           Object {
-            "alignItems": "center",
             "color": "#383838",
-            "display": "flex",
             "fontSize": 30,
-            "height": "100%",
-            "justifyContent": "center",
-            "width": "100%",
           }
         }
       >
