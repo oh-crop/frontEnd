@@ -9,7 +9,7 @@ export default function GardenPlant ({ info, navigation, navigation: { dangerous
     <TouchableOpacity
       style={styles.myGardenBody}
       onPress={() => {
-        navigation.navigate('PlantProfilePage');
+        navigation.navigate('PlantProfilePage', {id: info.id});
         dangerouslyGetParent().setOptions({ tabBarVisible: false });
       }}>
       <View style={styles.myGardenPlants}>
