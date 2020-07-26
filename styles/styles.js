@@ -7,7 +7,7 @@ export default styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: '#fffefe',
-    color: '#fafafa',
+    // color: '#fafafa',
     flex: 1,
     justifyContent: 'center',
   },

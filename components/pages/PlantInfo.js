@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -10,48 +10,75 @@ import {
 
 import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
-import sunflowerImg from '../../assets/sunflower.jpg';
+import api from '../../api/plantAPI';
 
-export default function PlantInfo({ navigation }) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={backgroundImg}
-        style={styles.greenCropBackground}>
-        <View style={styles.plantInfoHeader}>
-          <Text style={styles.plantName}>Sunflower</Text>
-        </View>
-        <View style={styles.transparentSubHeader}></View>
-        <View style={styles.plantImgContainer}>
-          <Image style={styles.plantImg} source={{uri: sunflowerImg}}/>
-        </View>
-        <View style={styles.plantContentContainer}>
-          <View style={styles.plantContent}>
-            <Text style={styles.plantAttrLabel}>Lighting:</Text>
-            <Text style={styles.plantAttrValue}>Full Sun</Text>
+export default class PlantInfo extends Component {
+  state = {
+    plantInfo: {}
+   }
+  
+  componentDidMount() {
+    this.getPlantId(this.props.route.params.id)
+  }
 
-            <Text style={styles.plantAttrLabel}>How Often To Water:</Text>
-            <Text style={styles.plantAttrValue}>Every 2 days</Text>
+  getPlantId = (id) => {
+    api.getPlantById(id)
+    .then(response => this.setState({plantInfo: response.data}))
+    .catch(err => console.log(err))
+  }
 
-            <Text style={styles.plantAttrLabel}>Seed To Harvest:</Text>
-            <Text style={styles.plantAttrValue}>70 Days</Text>
-
-            <Text style={styles.plantAttrLabel}>Root Depth:</Text>
-            <Text style={styles.plantAttrValue}>2 Inches</Text>
-
-            <Text style={styles.plantAttrLabel}>Plant Lifecycle:</Text>
-            <Text style={styles.plantAttrValue}>Annual</Text>
+  render () {
+    let plantData = this.state.plantInfo
+    return (
+      <SafeAreaView style={styles.container}>
+        <ImageBackground
+          source={backgroundImg}
+          style={styles.greenCropBackground}
+          >
+          <View style={styles.plantInfoHeader}>
+            <Text style={styles.plantName}>{plantData.plant_type}</Text>
           </View>
-        </View>
-        <TouchableOpacity
-          style={styles.backButtonContainer}
-          onPress={() => {
-            navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-            navigation.navigate('SearchPage')
-          }}>
-          <Text style={styles.backButton}>Go Back to Search</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </SafeAreaView>
-  );
+          <View style={styles.transparentSubHeader}></View>
+          <View style={styles.plantImgContainer}>
+            <Image
+              style={styles.plantImg}
+              source={{uri: plantData.plant_image}}/>
+          </View>
+          <View style={styles.plantContentContainer}>
+            <View style={styles.plantContent}>
+              <Text style={styles.plantAttrLabel}>Lighting:</Text>
+              <Text style={styles.plantAttrValue}>{plantData.lighting}</Text>
+              <Text style={styles.plantAttrLabel}>How Often To Water:</Text>
+              <Text style={styles.plantAttrValue}>{plantData.days_between_water} days</Text>
+              <Text style={styles.plantAttrLabel}>Seed To Harvest:</Text>
+              <Text style={styles.plantAttrValue}>{plantData.days_to_harvest_from_seed} days</Text>
+              <Text style={styles.plantAttrLabel}>Root Depth:</Text>
+              <Text style={styles.plantAttrValue}>{plantData.root_depth_in} inches</Text>
+              <Text style={styles.plantAttrLabel}>Plant Lifecycle: </Text>
+              <Text style={styles.plantAttrValue}>{plantData.lifecycle}</Text>
+            </View>
+          </View>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+              this.props.navigation.navigate('NamePlant', {id: plantData.id})}
+            }>
+            <View>
+              <Text 
+              style={styles.text}>Add Plant to Garden</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={style.backButtonContainer}
+            onPress={() => {
+              this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
+              this.props.navigation.navigate('SearchPage')}
+            }
+            >
+            <Text style={styles.backButton}>Go Back to Search</Text>
+          </TouchableOpacity>
+        </ImageBackground>
+      </SafeAreaView>
+    );
+  }
 }

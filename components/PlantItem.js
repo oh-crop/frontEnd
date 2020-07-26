@@ -7,9 +7,10 @@ export default function PlantItem ({ title, image, navigation }) {
   return (
     <TouchableHighlight
       onPress={() => {
-        navigation.navigate('PlantInfoPage');
+        navigation.navigate('PlantInfoPage', {id: id});
         navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false });
       }} >
+  
       <View>
         <Image style={styles.meetAPlant} source={{uri: image}}/>
         <Text>{ title }</Text>
