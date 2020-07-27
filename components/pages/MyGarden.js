@@ -19,21 +19,25 @@ export default function ({ navigation }) {
 
   const getAllGardenPlants = () => {
     api.getAllGardenPlants()
-    .then(response => {
-      setGardenPlants(response.data)
-    })
-    .catch(err => console.log(err))
+      .then(response => {
+        this.setState({gardenPlants: response.data})
+      })
+      .catch(err => console.log(err))
   }
-
-
-  return (
-    <SafeAreaView style={styles.myGardenContainer}>
-      <ImageBackground
-        style={styles.dirtBackground}
-        source={dirtBackground}>
-        <View style={styles.myGardenContainer}>
+    return (
+      <SafeAreaView style={styles.container}>
+        <ImageBackground
+          style={styles.dirtBackground}
+          source={dirtBackground}>
           <View style={styles.myGardenHeader}>
-            <Text style={{color: 'white'}}>My Garden</Text>
+            <Text style={styles.headerText}>My Garden</Text>
+          </View>
+          <View style={styles.myGardenContent}>
+            <ScrollView >
+              <View style={styles.myGarden}>
+                {this.renderGardenPlants()}
+              </View>
+            </ScrollView>
           </View>
           <ScrollView >
             <View style={styles.myGarden}>
@@ -48,4 +52,4 @@ export default function ({ navigation }) {
       </ImageBackground>
     </SafeAreaView>
   )
-}
+
