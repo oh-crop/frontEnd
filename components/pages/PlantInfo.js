@@ -16,15 +16,15 @@ export default class PlantInfo extends Component {
   state = {
     plantInfo: {}
    }
-  
+
   componentDidMount() {
     this.getPlantId(this.props.route.params.id)
   }
 
   getPlantId = (id) => {
     api.getPlantById(id)
-    .then(response => this.setState({plantInfo: response.data}))
-    .catch(err => console.log(err))
+      .then(response => this.setState({plantInfo: response.data}))
+      .catch(err => console.log(err))
   }
 
   render () {
@@ -46,7 +46,7 @@ export default class PlantInfo extends Component {
               source={{uri: plantData.plant_image}}/>
           </View>
           <View style={styles.plantContentContainer}>
-            <View style={styles.plantContent}>
+            <View style={[styles.plantContent, styles.borderRadius]}>
               <Text style={styles.plantAttrLabel}>Lighting:</Text>
               <Text style={styles.plantAttrValue}>{plantData.lighting}</Text>
               <Text style={styles.plantAttrLabel}>How Often To Water:</Text>
@@ -65,7 +65,7 @@ export default class PlantInfo extends Component {
               this.props.navigation.navigate('NamePlant', {id: plantData.id})}
             }>
             <View>
-              <Text 
+              <Text
               style={styles.text}>Add Plant to Garden</Text>
             </View>
           </TouchableOpacity>
