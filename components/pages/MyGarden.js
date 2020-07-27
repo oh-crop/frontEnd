@@ -44,24 +44,17 @@ export default function ({ navigation, route }) {
       <ImageBackground
         style={styles.dirtBackground}
         source={dirtBackground}>
-        <View style={styles.myGardenContainer}>
           <View style={styles.myGardenHeader}>
             <Text style={styles.headerText}>My Garden</Text>
           </View>
           <View style={styles.myGardenContent}>
-            <ScrollView >
+            <ScrollView>
               <View style={styles.myGarden}>
-                {this.renderGardenPlants()}
+                {mapGardenPlants()}
               </View>
             </ScrollView>
           </View>
-          <ScrollView >
-            <View style={styles.myGarden}>
-              {mapGardenPlants()}
-            </View>
-          </ScrollView>
-        </View>
       </ImageBackground>
     </SafeAreaView>
   )
-
+}
