@@ -62,7 +62,8 @@ export default function PlantProfile({ route, navigation }) {
       <SafeAreaView style={styles.container}>
         <ImageBackground
           source={backgroundImg}
-          style={styles.greenCropBackground}>
+          style={styles.dirtBackground}>
+
           <View style={styles.plantInfoHeader}>
             <Text style={styles.headerText}>{plantInfo.plant_name}</Text>
             <Text style={styles.plantName}>{plantInfo.plant_type}</Text>
@@ -86,7 +87,7 @@ export default function PlantProfile({ route, navigation }) {
             <Text style={styles.plantAttrLabel}>Harvest Date:</Text>
             <Text style={styles.plantAttrValue}>{plantInfo.harvest_date}</Text>
             <Text style={styles.plantAttrLabel}>Harvest in:</Text>
-            <Text style={styles.plantAttrValue}>{plantInfo.days_until_harvest}</Text
+            <Text> style={styles.plantAttrValue}>{plantInfo.days_until_harvest}</Text>
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
@@ -127,6 +128,7 @@ export default function PlantProfile({ route, navigation }) {
               </View>
             </View>
           </View>
+
           <TouchableOpacity
             style={styles.backButtonContainer}
             onPress={() => {
@@ -136,6 +138,7 @@ export default function PlantProfile({ route, navigation }) {
               Go Back to My Garden
             </Text>
           </TouchableOpacity>
+          </View>
         </ImageBackground>
       </SafeAreaView>
     );
