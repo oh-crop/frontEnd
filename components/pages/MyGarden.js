@@ -25,19 +25,26 @@ export default class MyGarden extends Component {
 
   render(){
     return (
-      <SafeAreaView style={styles.myGardenContainer}>
+      <SafeAreaView style={styles.container}>
+
         <ImageBackground
           style={styles.dirtBackground}
           source={dirtBackground}>
-          <View style={styles.myGardenContainer}>
-            <View style={styles.myGardenHeader}>
-              <Text style={styles.headerText}>My Garden</Text>
-            </View>
-            <ScrollView style={styles.gardenScrollView}>
+
+          <View style={styles.myGardenHeader}>
+            <Text style={styles.headerText}>My Garden</Text>
+          </View>
+
+          <View style={styles.myGardenContent}>
+
+
+            <ScrollView>
               <View style={styles.myGarden}>
                 {this.state.gardenPlants.map( plant => {
                   return(
-                    <GardenPlant navigation={ this.props.navigation } info={plant} key={plant.id}/>
+                    <GardenPlant
+                      navigation={ this.props.navigation }
+                      info={plant} key={plant.id}/>
                   )
                 })}
               </View>
