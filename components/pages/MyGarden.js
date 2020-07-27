@@ -15,10 +15,6 @@ export default class MyGarden extends Component {
     this.getAllGardenPlants()
   }
 
-  componentDidUpdate() {
-    this.getAllGardenPlants()
-  }
-
   getAllGardenPlants = () => {
     api.getAllGardenPlants()
     .then(response => {

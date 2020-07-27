@@ -17,20 +17,17 @@ import api from '../../api/plantAPI';
 
 export default class PlantProfile extends Component {
   state = {
-    plantInfo: {}
+    plantInfo: {},
+    isLoaded: false
   }
 
   componentDidMount() {
-    this.getPlantInfo(this.props.route.params.id);
-  }
-
-  componentDidUpdate() {
-    this.getPlantInfo(this.props.route.params.id);
+    this.getPlantInfo(this.props.route.params.id)
   }
 
   getPlantInfo = (id) => {
     api.getGardenPlantById(id)
-    .then(response => this.setState({plantInfo: response.data}))
+    .then(response => this.setState({plantInfo: response.data, isLoaded: true}))
     .catch(err => console.log(err))
   }
 
@@ -48,12 +45,20 @@ export default class PlantProfile extends Component {
 
   waterPlant = (id) => {
     api.waterPlant(id)
-    .then(response => {})
+    .then(response => {
+      let plantInfo = this.state.plantInfo 
+      plantInfo.last_watered = response.data.last_watered
+      plantInfo.days_until_next_water = response.data.water_frequency
+      this.setState({plantInfo: plantInfo})
+    })
     .catch(err => console.log(err))
   }
 
   render () {
-    console.log('plantInfo', this.state.plantInfo)
+    // if(!this.state.isLoaded) {
+    //   return <Text>LOADING</Text>
+    // }
+    
     return (
       <SafeAreaView style={styles.container}>
         <ImageBackground source={backgroundImg} style={styles.greenCropBackground}>
@@ -83,7 +88,7 @@ export default class PlantProfile extends Component {
               <Text style={styles.plantAttrValue}>{this.state.plantInfo.harvest_date}</Text>
               {/* placeholder below - will be adding this info from the API once it gets updated*/}
               <Text style={styles.plantAttrLabel}>Harvest in:</Text>
-              <Text style={styles.plantAttrValue}>200 Days</Text>
+              <Text style={styles.plantAttrValue}>{this.state.plantInfo.days_until_harvest}</Text>
             </View>
             <Button
               onPress={() => this.deletePlant(this.state.plantInfo.gardenplant_id)}
