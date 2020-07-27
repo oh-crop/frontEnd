@@ -12,7 +12,6 @@ export default function ({ navigation }) {
   React.useEffect(() => {
      const updatePlants = navigation.addListener('focus', () => {
        getAllGardenPlants()
-       console.log('here here')
      });
 
      return updatePlants;
