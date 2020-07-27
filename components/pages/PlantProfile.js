@@ -18,18 +18,16 @@ import api from '../../api/plantAPI';
 export default function PlantProfile({ route, navigation }) {
 
   const [plantInfo, setPlantInfo] = useState({})
-  const [toggle, setToggle] = useState(0)
-
-  let monitor = plantInfo.days_until_next_water
+  const [toggle, setToggle] = useState(false)
 
   useEffect(() => {
      const updatePlant = navigation.addListener('focus', () => {
        getPlantInfo(route.params.id)
+       setToggle(false)
      });
 
      return updatePlant;
    }, [navigation]);
-
 
   const getPlantInfo = (id) => {
     api.getGardenPlantById(id)
@@ -52,12 +50,11 @@ export default function PlantProfile({ route, navigation }) {
   const waterPlant = (id) => {
     api.waterPlant(id)
     .then(response => {
-      console.log(response.data)
       let copyInfo = plantInfo
       copyInfo.last_watered = response.data.last_watered
-      copyInfo.days_until_next_water = response.data.water_frequency
+      copyInfo.days_until_next_water =  response.data.water_frequency
       setPlantInfo(copyInfo)
-      setToggle(toggle + 1)
+      setToggle(true)
     })
     .catch(err => console.log(err))
   }
