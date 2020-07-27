@@ -6,24 +6,23 @@ import styles from '../styles/styles';
 
 const searchIcon = <Ionicons name="md-search" size={40} color="black" />
 
-class InputBar extends Component {
-
-  render () {
-    return (
-      <View style={styles.searchInputContainer}>
-        <TextInput
-          style={[styles.searchbox, styles.textDark]}
-          placeholder={this.props.placeholder}
-          onChangeText={(text) => this.props.setValue(text)}
+function InputBar (props) {
+  
+  return (
+    <View style={styles.searchInputContainer}>
+      <TextInput
+        style={[styles.searchbox, styles.textDark]}
+          placeholder={props.placeholder}
+          onChangeText={(text) => props.setValue(text)}
+      />
+      <View style={styles.borderRadius}>
+        <Button
+          title={props.buttonText}
+          onPress={() => props.inputButtonClick()}
         />
-        <View style={styles.borderRadius}>
-          <Button
-            title={this.props.buttonText}
-            onPress={() => this.props.inputButtonClick()}/>
-        </View>
       </View>
-    )
-  }
+    </View>
+  )
 }
 
 export default InputBar;

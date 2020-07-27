@@ -36,8 +36,8 @@ export default function PlantProfile({ route, navigation }) {
 
   const deletePlantFromGarden = (id) => {
     api.deleteGardenPlant(id)
-      .then(response => alert(`${response.data.plant_name} has now been deleted!`))
-      .catch(err => console.log(err))
+    .then(response => {})
+    .catch(err => console.log(err))
   }
 
   const deletePlant = async (id) => {
@@ -58,8 +58,7 @@ export default function PlantProfile({ route, navigation }) {
     .catch(err => console.log(err))
   }
 
-
-    return (
+  return (
       <SafeAreaView style={styles.container}>
         <ImageBackground
           source={backgroundImg}
@@ -67,6 +66,27 @@ export default function PlantProfile({ route, navigation }) {
           <View style={styles.plantInfoHeader}>
             <Text style={styles.headerText}>{plantInfo.plant_name}</Text>
             <Text style={styles.plantName}>{plantInfo.plant_type}</Text>
+        </View>
+        <View style={styles.transparentSubHeader}></View>
+        <View style={styles.plantImgContainer}>
+        <Button
+          onPress={() => waterPlant(plantInfo.gardenplant_id)}
+          title={"Click when you've watered"} />
+          <MaterialCommunityIcons
+            style={styles.icon}
+            name="flower"
+            size={40} />
+        </View>
+        <View style={styles.plantContentContainer}>
+          <View style={styles.plantChoresContent}>
+            <Text style={styles.plantAttrLabel}>Last Watered On:</Text>
+            <Text style={styles.plantAttrValue}>{plantInfo.last_watered}</Text>
+            <Text style={styles.plantAttrLabel}>Next Water in:</Text>
+            <Text style={styles.plantAttrValue}>{plantInfo.days_until_next_water} Days</Text>
+            <Text style={styles.plantAttrLabel}>Harvest Date:</Text>
+            <Text style={styles.plantAttrValue}>{plantInfo.harvest_date}</Text>
+            <Text style={styles.plantAttrLabel}>Harvest in:</Text>
+            <Text style={styles.plantAttrValue}>{plantInfo.days_until_harvest}</Text
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>

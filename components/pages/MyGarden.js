@@ -6,8 +6,9 @@ import styles from '../../styles/styles';
 import dirtBackground from '../../assets/dirt.png';
 import api from '../../api/plantAPI'
 
-export default function ({ navigation }) {
-  const [gardenPlants, setGardenPlants] = useState([])
+export default function ({ navigation, route }) {
+  const [gardenPlants, setGardenPlants] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
   React.useEffect(() => {
      const updatePlants = navigation.addListener('focus', () => {
@@ -19,16 +20,31 @@ export default function ({ navigation }) {
 
   const getAllGardenPlants = () => {
     api.getAllGardenPlants()
-      .then(response => {
-        this.setState({gardenPlants: response.data})
-      })
-      .catch(err => console.log(err))
+    .then(response => {
+      setGardenPlants(response.data)
+    })
+    .catch(err => console.log(err))
+    setToggle(true)
   }
-    return (
-      <SafeAreaView style={styles.container}>
-        <ImageBackground
-          style={styles.dirtBackground}
-          source={dirtBackground}>
+
+  const mapGardenPlants = () => {
+    if(gardenPlants.length > 0) {
+      return gardenPlants.map( plant => {
+        return (
+          <GardenPlant navigation={ navigation } info={plant} key={plant.id}/>
+        )
+      })
+    } else {
+      return <Text style={styles.text}>{gardenPlants.info}</Text>
+    }
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ImageBackground
+        style={styles.dirtBackground}
+        source={dirtBackground}>
+        <View style={styles.myGardenContainer}>
           <View style={styles.myGardenHeader}>
             <Text style={styles.headerText}>My Garden</Text>
           </View>
@@ -41,11 +57,7 @@ export default function ({ navigation }) {
           </View>
           <ScrollView >
             <View style={styles.myGarden}>
-              {gardenPlants.map( plant => {
-                return(
-                  <GardenPlant navigation={ navigation } info={plant} key={plant.id}/>
-                )
-              })}
+              {mapGardenPlants()}
             </View>
           </ScrollView>
         </View>
