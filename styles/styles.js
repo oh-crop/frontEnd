@@ -3,22 +3,31 @@ import { StyleSheet } from 'react-native';
 let styles;
 
 export default styles = StyleSheet.create({
-  // Universal
+  // UNIVERSAL
   container: {
     alignItems: 'center',
     backgroundColor: '#fffefe',
-    // color: '#fafafa',
     flex: 1,
     justifyContent: 'center',
   },
-  text: {
-    color: 'white',
-    fontSize: 19,
+  backButtonContainer: {
+    alignItems: 'center',
+    backgroundColor: '#f8f8f8',
+    flex: 1,
+    justifyContent: 'center',
   },
   backButton: {
     color: '#383838',
     fontSize: 30,
   },
+  borderRadius: {
+    borderRadius: 5,
+  },
+  text: {
+    color: 'white',
+    fontSize: 19,
+  },
+
   // Landing Page
   logo: {
     height: 300,
@@ -36,6 +45,7 @@ export default styles = StyleSheet.create({
     shadowOpacity: .1,
     width: 150,
   },
+
   // Loading Screen
   loadingContainer: {
     backgroundColor: '#fffefe',
@@ -50,11 +60,14 @@ export default styles = StyleSheet.create({
   loadingText: {
     color: '#1d1d1d',
   },
-  // Search Page
+
+  // SEARCH PAGE - components/pages/Search.js
   searchInputContainer: {
+    // borderWidth: 5,
+
     color: '#fafafa',
     backgroundColor: '#fffefe',
-    paddingBottom: 50,
+
   },
   searchResultsContainer: {
     marginHorizontal: 20,
@@ -79,11 +92,23 @@ export default styles = StyleSheet.create({
     height: 200,
     width: 300,
   },
+  plantItemContainer: {
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: 'dimgrey',
+    display: 'flex',
+    padding: 10,
+  },
+  searchPageText: {
+    fontSize: 24,
+    padding: 20,
+  },
   searchButton: {
     alignSelf: 'center',
     width: 200,
   },
-  // Plant Info Page
+
+  // PLANT INFO PAGE - components/pages/PlantInfo.js
   greenCropBackground: {
     flex: 1,
     width: '100%',
@@ -113,8 +138,6 @@ export default styles = StyleSheet.create({
     zIndex: 1,
   },
   plantImg: {
-    borderWidth: 3,
-    borderColor: 'orange',
     borderRadius: 100,
     height: 120,
     width: 120,
@@ -129,7 +152,6 @@ export default styles = StyleSheet.create({
   },
   plantContent: {
     backgroundColor: 'rgba(148, 126, 104, .9)',
-    borderRadius: 10,
     height: '100%',
     justifyContent: 'space-around',
     paddingTop: '25%',
@@ -147,12 +169,7 @@ export default styles = StyleSheet.create({
     marginTop: '12%',
     marginBottom: '15%',
   },
-  backButtonContainer: {
-    alignItems: 'center',
-    backgroundColor: '#f8f8f8',
-    flex: 1.5,
-    justifyContent: 'center',
-  },
+
   //My Garden Page
   myGardenContainer: {
     height: '100%',
