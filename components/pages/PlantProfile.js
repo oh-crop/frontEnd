@@ -37,14 +37,14 @@ export default function PlantProfile({ route, navigation }) {
 
   const deletePlantFromGarden = (id) => {
     api.deleteGardenPlant(id)
-    .then(response => alert(`${response.data.plant_name} has now been deleted!`))
+    .then(response => {})
     .catch(err => console.log(err))
   }
 
   const deletePlant = async (id) => {
     await deletePlantFromGarden(id)
     await navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-    await navigation.navigate('MyGardenPage')
+    await navigation.navigate('MyGardenPage', {deleteMessage: "You deleted your plant"})
   }
 
   const waterPlant = (id) => {

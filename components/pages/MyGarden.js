@@ -6,8 +6,9 @@ import styles from '../../styles/styles';
 import dirtBackground from '../../assets/dirt.png';
 import api from '../../api/plantAPI'
 
-export default function ({ navigation }) {
-  const [gardenPlants, setGardenPlants] = useState([])
+export default function ({ navigation, route }) {
+  const [gardenPlants, setGardenPlants] = useState([]);
+  const [toggle, setToggle] = useState(false);
 
   React.useEffect(() => {
      const updatePlants = navigation.addListener('focus', () => {
@@ -25,6 +26,14 @@ export default function ({ navigation }) {
     .catch(err => console.log(err))
   }
 
+  const deleteAPlant = () => {
+    console.log(route.params === 'undefined')
+    if(typeof route.params === 'undefined') {
+      return ''
+    } else {
+      return route.params.deleteMessage
+    }
+  }
 
   return (
     <SafeAreaView style={styles.myGardenContainer}>
@@ -34,6 +43,7 @@ export default function ({ navigation }) {
         <View style={styles.myGardenContainer}>
           <View style={styles.myGardenHeader}>
             <Text style={{color: 'white'}}>My Garden</Text>
+            <Text>{deleteAPlant()}</Text>
           </View>
           <ScrollView >
             <View style={styles.myGarden}>
