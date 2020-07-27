@@ -162,6 +162,7 @@ export default styles = StyleSheet.create({
   },
   plantImg: {
     borderWidth: 2,
+    
     borderRadius: 100,
     height: 120,
     width: 120,
