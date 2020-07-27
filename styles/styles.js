@@ -149,13 +149,19 @@ export default styles = StyleSheet.create({
   },
   plantImgContainer: {
     alignItems: 'center',
+    alignSelf: 'center',
+    borderWidth: 2,
+    borderColor: 'red',
+    borderRadius: 100,
+    height: 120,
     justifyContent: 'center',
     marginTop: '-5%',
     marginBottom: '-10%',
-    width: '100%',
     zIndex: 1,
+    width: 120,
   },
   plantImg: {
+    borderWidth: 2,
     borderRadius: 100,
     height: 120,
     width: 120,
@@ -192,18 +198,22 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   myGarden: {
+    padding: '5%',
+    paddingBottom: 0,
+
     flexDirection: 'row',
     flexWrap: 'wrap',
+    paddingLeft: '2%',
   },
   myGardenBody: {
-    height: 120,
-    width: 120,
+    height: 180,
+    width: 110,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   myGardenPlants: {
     alignItems: 'center',
-    justifyContent: 'center',
+    height: 120,
+    width: 120,
   },
   icon: {
     textShadowColor: 'grey',
@@ -212,8 +222,16 @@ export default styles = StyleSheet.create({
     color: 'limegreen',
   },
   dirtBackground: {
-    width: '100%',
     flex: 1,
+    width: '100%',
+  },
+  iconContainer: {
+    width: '100%',
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+  },
+  gardenPlantText: {
+    textAlign: 'center',
   },
 
   // PLANT PROFILE PAGE - components/pages/PlantProfile.js
@@ -222,7 +240,6 @@ export default styles = StyleSheet.create({
     fontSize: 20,
   },
   plantProfileContainer: {
-    // backgroundColor: 'rgba(194, 173, 134, .8)',
     backgroundColor: 'rgba(159, 135, 95, .9)',
     paddingTop: '20%',
     justifyContent: 'space-between',
@@ -232,9 +249,17 @@ export default styles = StyleSheet.create({
     height: '100%',
   },
   plantActionsContainer: {
-    marginTop: -7,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+  },
+  actionButtons: {
+    alignItems: 'center',
+  },
+  waterButtonText: {
+    color: '#0774B9',
+  },
+  removeButtonText: {
+    color: '#9e020f',
   },
   plantChoresContent: {
     height: '85%',
@@ -246,6 +271,6 @@ export default styles = StyleSheet.create({
   plantProfileAttrValue: {
     color: '#fffefe',
     fontSize: 22,
-    marginBottom: '5%',
+    marginBottom: '3%',
   },
 });
