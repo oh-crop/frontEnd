@@ -10,7 +10,7 @@ export default function Landing({ navigation }) {
         source={require('../../assets/logo.png')}
         style={ styles.logo }/>
       <TouchableOpacity
-        style={ styles.button }
+        style={[styles.button, styles.borderRadius, styles.shadow]}
         onPress={() => navigation.navigate('TabNavigation', { screen: 'Search'})}
         >
         <Text style={ styles.text }>
@@ -18,7 +18,7 @@ export default function Landing({ navigation }) {
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={ styles.button }
+        style={[styles.button, styles.borderRadius, styles.shadow]}
         onPress={() => navigation.navigate('TabNavigation', { screen: 'Garden' })}
         >
         <Text style={ styles.text }>
