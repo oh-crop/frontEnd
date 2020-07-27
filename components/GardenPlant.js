@@ -1,16 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity} from 'react-native';
-import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from '../styles/styles';
 
 export default function GardenPlant ({ info, navigation, navigation: { dangerouslyGetParent } }) {
-  console.log(info)
   return (
     <TouchableOpacity
       style={styles.myGardenBody}
       onPress={() => {
-        navigation.navigate('PlantProfilePage');
+        navigation.navigate('PlantProfilePage', {id: info.id});
         dangerouslyGetParent().setOptions({ tabBarVisible: false });
       }}>
       <View style={styles.myGardenPlants}>

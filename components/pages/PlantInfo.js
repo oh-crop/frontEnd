@@ -36,7 +36,8 @@ export default class PlantInfo extends Component {
           style={styles.greenCropBackground}
           >
           <View style={styles.plantInfoHeader}>
-            <Text style={styles.plantName}>{plantData.plant_type}</Text>
+          {/*The style below may need to be changed since we switched these in the plantProfile page*/}
+            <Text style={styles.plantChildName}>{plantData.plant_type}</Text>
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
