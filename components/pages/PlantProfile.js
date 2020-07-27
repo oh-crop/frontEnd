@@ -44,7 +44,7 @@ export default function PlantProfile({ route, navigation }) {
   const deletePlant = async (id) => {
     await deletePlantFromGarden(id)
     await navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-    await navigation.navigate('MyGardenPage', {deleteMessage: "You deleted your plant"})
+    await navigation.navigate('MyGardenPage')
   }
 
   const waterPlant = (id) => {

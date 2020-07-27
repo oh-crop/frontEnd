@@ -24,18 +24,24 @@ export default function ({ navigation, route }) {
       setGardenPlants(response.data)
     })
     .catch(err => console.log(err))
+    setToggle(true)
   }
 
-  const deleteAPlant = () => {
-    console.log(route.params === 'undefined')
-    if(typeof route.params === 'undefined') {
-      return ''
+  const mapGardenPlants = () => {
+    if(gardenPlants.length > 0) {
+      return gardenPlants.map( plant => {
+        return (
+          <GardenPlant navigation={ navigation } info={plant} key={plant.id}/>
+        )
+      })
     } else {
-      return route.params.deleteMessage
+      return <Text style={styles.text}>{gardenPlants.info}</Text>
     }
   }
 
   return (
+    console.log('gardenPlants', gardenPlants),
+    console.log('gardenPlants.info', gardenPlants.info),
     <SafeAreaView style={styles.myGardenContainer}>
       <ImageBackground
         style={styles.dirtBackground}
@@ -43,15 +49,10 @@ export default function ({ navigation, route }) {
         <View style={styles.myGardenContainer}>
           <View style={styles.myGardenHeader}>
             <Text style={{color: 'white'}}>My Garden</Text>
-            <Text>{deleteAPlant()}</Text>
           </View>
           <ScrollView >
             <View style={styles.myGarden}>
-              {gardenPlants.map( plant => {
-                return(
-                  <GardenPlant navigation={ navigation } info={plant} key={plant.id}/>
-                )
-              })}
+              {mapGardenPlants()}
             </View>
           </ScrollView>
         </View>
