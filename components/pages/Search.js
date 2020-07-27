@@ -33,11 +33,11 @@ export default class Search extends Component {
   render () {
     return (
       <SafeAreaView style={styles.container}>
-        <InputBar 
+        <InputBar
           setValue={this.setQuery}
           inputButtonClick={this.gatherQuery}
           placeholder={'Search'}
-          buttonText={'Click to Search'}/>
+          buttonText={'Search'}/>
         { !this.state.hasSearched
           ? this.meetThePlant()
           : this.searchResults() }
@@ -57,7 +57,7 @@ export default class Search extends Component {
 
   meetThePlant = () => (
     <View style={styles.container}>
-      <Text>
+      <Text style={styles.searchPageText}>
         MEET A NEW PLANT!
       </Text>
       <PlantItem
