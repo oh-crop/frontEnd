@@ -11,11 +11,11 @@ function InputBar (props) {
   return (
     <View style={styles.searchInputContainer}>
       <TextInput
-        style={styles.searchbox}
+        style={[styles.searchbox, styles.textDark]}
           placeholder={props.placeholder}
           onChangeText={(text) => props.setValue(text)}
       />
-      <View style={styles.searchButton}>
+      <View style={styles.borderRadius}>
         <Button
           title={props.buttonText}
           onPress={() => props.inputButtonClick()}

@@ -3,12 +3,11 @@ import {
   View,
   Text,
   SafeAreaView,
-  Image,
   TouchableOpacity,
   ImageBackground,
   Button
 } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 
 import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
@@ -49,7 +48,7 @@ export default function PlantProfile({ route, navigation }) {
 
   const waterPlant = (id) => {
     api.waterPlant(id)
-    .then(response => {
+      .then(response => {
       let copyInfo = plantInfo
       copyInfo.last_watered = response.data.last_watered
       copyInfo.days_until_next_water =  response.data.water_frequency
@@ -60,19 +59,19 @@ export default function PlantProfile({ route, navigation }) {
   }
 
   return (
-    console.log('route', route),
-    <SafeAreaView style={styles.container}>
-      <ImageBackground source={backgroundImg} style={styles.greenCropBackground}>
-        <View style={styles.plantInfoHeader}>
-          <Text style={styles.plantChildName}>{plantInfo.plant_name}</Text>
-          <Text style={styles.plantName}>{plantInfo.plant_type}</Text>
+      <SafeAreaView style={styles.container}>
+        <ImageBackground
+          source={backgroundImg}
+          style={styles.greenCropBackground}>
+          <View style={styles.plantInfoHeader}>
+            <Text style={styles.headerText}>{plantInfo.plant_name}</Text>
+            <Text style={styles.plantName}>{plantInfo.plant_type}</Text>
         </View>
         <View style={styles.transparentSubHeader}></View>
         <View style={styles.plantImgContainer}>
         <Button
           onPress={() => waterPlant(plantInfo.gardenplant_id)}
           title={"Click when you've watered"} />
-        {/* this image was removed and the icon was added - we can put the picture back once the image comes from API*/}
           <MaterialCommunityIcons
             style={styles.icon}
             name="flower"
@@ -82,29 +81,62 @@ export default function PlantProfile({ route, navigation }) {
           <View style={styles.plantChoresContent}>
             <Text style={styles.plantAttrLabel}>Last Watered On:</Text>
             <Text style={styles.plantAttrValue}>{plantInfo.last_watered}</Text>
-            {/* placeholder below - will be adding this info from the API once it gets updated*/}
             <Text style={styles.plantAttrLabel}>Next Water in:</Text>
             <Text style={styles.plantAttrValue}>{plantInfo.days_until_next_water} Days</Text>
             <Text style={styles.plantAttrLabel}>Harvest Date:</Text>
             <Text style={styles.plantAttrValue}>{plantInfo.harvest_date}</Text>
-            {/* placeholder below - will be adding this info from the API once it gets updated*/}
             <Text style={styles.plantAttrLabel}>Harvest in:</Text>
-            <Text style={styles.plantAttrValue}>{plantInfo.days_until_harvest}</Text>
+            <Text style={styles.plantAttrValue}>{plantInfo.days_until_harvest}</Text
           </View>
-          <Button
-            onPress={() => deletePlant(plantInfo.gardenplant_id)}
-            title={'Click to delete your plant from the garden'} />
-        </View>
-        <TouchableOpacity
-          style={styles.backButtonContainer}
-          onPress={() => {
-            navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-            navigation.navigate('MyGardenPage')
-          }}>
-          <Text style={styles.backButton}>Go Back to My Garden</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </SafeAreaView>
-  );
+          <View style={styles.transparentSubHeader}></View>
+          <View style={styles.plantImgContainer}>
+            <MaterialCommunityIcons
+              style={styles.icon}
+              name="flower"
+              size={70} />
+          </View>
+          <View style={styles.plantContentContainer}>
+            <View style={[styles.plantProfileContainer, styles.borderRadius]}>
+              <View style={styles.plantChoresContent}>
+                <Text style={styles.plantProfileAttrLabel}>Last Watered On:</Text>
+                <Text style={styles.plantProfileAttrValue}>{plantInfo.last_watered}</Text>
 
+                <Text style={styles.plantProfileAttrLabel}>Next Water in:</Text>
+                <Text style={styles.plantProfileAttrValue}>5 Days</Text>
+
+                <Text style={styles.plantProfileAttrLabel}>Harvest Date:</Text>
+                <Text style={styles.plantProfileAttrValue}>{plantInfo.harvest_date}</Text>
+
+                <Text style={styles.plantProfileAttrLabel}>Harvest in:</Text>
+                <Text style={styles.plantProfileAttrValue}>{plantInfo.days_until_harvest} Days</Text>
+              </View>
+
+              <View style={styles.plantActionsContainer}>
+                <TouchableOpacity
+                  style={styles.actionButtons}
+                  onPress={() => this.waterPlant(plantInfo.gardenplant_id)}>
+                  <Entypo name="water" size={24} color="#0774B9" />
+                  <Text style={styles.waterButtonText}>Water</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.actionButtons}
+                  onPress={() => this.deletePlant(plantInfo.gardenplant_id)}>
+                  <MaterialCommunityIcons name="shovel" size={24} color="#9e020f" />
+                  <Text style={styles.removeButtonText}>Remove</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+          <TouchableOpacity
+            style={styles.backButtonContainer}
+            onPress={() => {
+              navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
+              navigation.navigate('MyGardenPage')}}>
+            <Text style={styles.backButton}>
+              Go Back to My Garden
+            </Text>
+          </TouchableOpacity>
+        </ImageBackground>
+      </SafeAreaView>
+    );
 }

@@ -40,13 +40,20 @@ export default function ({ navigation, route }) {
   }
 
   return (
-    <SafeAreaView style={styles.myGardenContainer}>
+    <SafeAreaView style={styles.container}>
       <ImageBackground
         style={styles.dirtBackground}
         source={dirtBackground}>
         <View style={styles.myGardenContainer}>
           <View style={styles.myGardenHeader}>
-            <Text style={{color: 'white'}}>My Garden</Text>
+            <Text style={styles.headerText}>My Garden</Text>
+          </View>
+          <View style={styles.myGardenContent}>
+            <ScrollView >
+              <View style={styles.myGarden}>
+                {this.renderGardenPlants()}
+              </View>
+            </ScrollView>
           </View>
           <ScrollView >
             <View style={styles.myGarden}>
@@ -57,4 +64,4 @@ export default function ({ navigation, route }) {
       </ImageBackground>
     </SafeAreaView>
   )
-}
+

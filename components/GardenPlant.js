@@ -4,22 +4,24 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from '../styles/styles';
 
-export default function GardenPlant ({ forceUpdate, info, navigation, navigation: { dangerouslyGetParent } }) {
+export default function GardenPlant ({ info, navigation }) {
+  
   return (
     <TouchableOpacity
       style={styles.myGardenBody}
       onPress={() => {
         navigation.navigate('PlantProfilePage', {id: info.id});
-        dangerouslyGetParent().setOptions({ tabBarVisible: false });
+        navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false });
       }}>
-      <View style={styles.myGardenPlants}>
-        <MaterialCommunityIcons
-          style={styles.icon}
-          name="flower"
-          size={40} />
-
-        <Text style={styles.text}>{info.plant_name}</Text>
-      </View>
+        <View style={styles.iconContainer}>
+          <MaterialCommunityIcons
+            style={styles.icon}
+            name="flower"
+            size={50} />
+        </View>
+        <View>
+          <Text style={[styles.textLight, styles.gardenPlantText]}>{info.plant_name}</Text>
+        </View>
     </TouchableOpacity>
   );
 }

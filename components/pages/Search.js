@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-import { View, Text, FlatList, SafeAreaView, Scrollview } from 'react-native';
-
+import { View, Text, FlatList, SafeAreaView } from 'react-native';
 
 import PlantItem from '../PlantItem';
-import ImagePlaceholder from '../../assets/meet-a-plant-example.jpg';
 import InputBar from '../InputBar';
 import styles from '../../styles/styles';
 import api from '../../api/plantAPI';
@@ -33,11 +31,11 @@ export default class Search extends Component {
   render () {
     return (
       <SafeAreaView style={styles.container}>
-        <InputBar 
+        <InputBar
           setValue={this.setQuery}
           inputButtonClick={this.gatherQuery}
           placeholder={'Search'}
-          buttonText={'Click to Search'}/>
+          buttonText={'Search'}/>
         { !this.state.hasSearched
           ? this.meetThePlant()
           : this.searchResults() }
@@ -56,8 +54,8 @@ export default class Search extends Component {
   // this method will render to the page if the 'hasSearched' toggle is set to false
 
   meetThePlant = () => (
-    <View style={styles.container}>
-      <Text>
+    <View style={styles.searchResultsContainer}>
+      <Text style={styles.subHeader}>
         MEET A NEW PLANT!
       </Text>
       <PlantItem
@@ -69,12 +67,12 @@ export default class Search extends Component {
   );
 
   searchResults = () => (
+    <View style={styles.searchResultsContainer}>
     <FlatList
-      style={styles.searchResultsContainer}
       data={this.state.searchResults}
       keyExtractor={item => `${item.id}`}
-      renderItem={this.renderPlantItem}
-    />
+      renderItem={this.renderPlantItem} />
+    </View>
   )
 
   renderPlantItem = ({ item }) => (

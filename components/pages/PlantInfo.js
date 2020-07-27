@@ -29,16 +29,14 @@ export default function PlantInfo ({route, navigation}) {
     .then(response => setPlantInfo(response.data))
     .catch(err => console.log(err))
   }
-
     return (
       <SafeAreaView style={styles.container}>
         <ImageBackground
           source={backgroundImg}
-          style={styles.greenCropBackground}
-          >
+          style={styles.greenCropBackground}>
           <View style={styles.plantInfoHeader}>
           {/*The style below may need to be changed since we switched these in the plantProfile page*/}
-            <Text style={styles.plantChildName}>{plantInfo.plant_type}</Text>
+            <Text style={styles.headerText}>{plantInfo.plant_type}</Text>
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
@@ -47,37 +45,35 @@ export default function PlantInfo ({route, navigation}) {
               source={{uri: plantInfo.plant_image}}/>
           </View>
           <View style={styles.plantContentContainer}>
-            <View style={styles.plantContent}>
+            <View style={[styles.plantContent, styles.borderRadius]}>
               <Text style={styles.plantAttrLabel}>Lighting:</Text>
               <Text style={styles.plantAttrValue}>{plantInfo.lighting}</Text>
               <Text style={styles.plantAttrLabel}>How Often To Water:</Text>
-              <Text style={styles.plantAttrValue}>{plantInfo.days_between_water} days</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.days_between_water} Days</Text>
               <Text style={styles.plantAttrLabel}>Seed To Harvest:</Text>
-              <Text style={styles.plantAttrValue}>{plantInfo.days_to_harvest_from_seed} days</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.days_to_harvest_from_seed} Days</Text>
               <Text style={styles.plantAttrLabel}>Root Depth:</Text>
-              <Text style={styles.plantAttrValue}>{plantInfo.root_depth_in} inches</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.root_depth_in} Inches</Text>
               <Text style={styles.plantAttrLabel}>Plant Lifecycle: </Text>
               <Text style={styles.plantAttrValue}>{plantInfo.lifecycle}</Text>
             </View>
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
-              navigation.navigate('NamePlant', {id: plantInfo.id})}
-            }>
-            <View>
-              <Text 
-              style={styles.text}>Add Plant to Garden</Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.plantActionsContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+                navigation.navigate('NamePlant', {id: plantInfo.id})}}>
+
+              <Text style={styles.textLight}>Add to Garden</Text>
+            </TouchableOpacity>
+          </View>
+
           <TouchableOpacity
             style={styles.backButtonContainer}
             onPress={() => {
               navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-              navigation.navigate('SearchPage')}
-            }
-            >
-            <Text style={styles.backButton}>Go Back to Search</Text>
+              navigation.navigate('SearchPage')}}>
+            <Text style={styles.backButton}> Back to Search</Text>
           </TouchableOpacity>
         </ImageBackground>
       </SafeAreaView>
