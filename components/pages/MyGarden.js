@@ -40,8 +40,6 @@ export default function ({ navigation, route }) {
   }
 
   return (
-    console.log('gardenPlants', gardenPlants),
-    console.log('gardenPlants.info', gardenPlants.info),
     <SafeAreaView style={styles.myGardenContainer}>
       <ImageBackground
         style={styles.dirtBackground}

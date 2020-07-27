@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from '../styles/styles';
 
-export default function GardenPlant ({ info, navigation, navigation: { dangerouslyGetParent } }) {
+export default function GardenPlant ({ forceUpdate, info, navigation, navigation: { dangerouslyGetParent } }) {
   return (
     <TouchableOpacity
       style={styles.myGardenBody}

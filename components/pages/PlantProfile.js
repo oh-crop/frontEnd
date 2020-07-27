@@ -60,6 +60,7 @@ export default function PlantProfile({ route, navigation }) {
   }
 
   return (
+    console.log('route', route),
     <SafeAreaView style={styles.container}>
       <ImageBackground source={backgroundImg} style={styles.greenCropBackground}>
         <View style={styles.plantInfoHeader}>
