@@ -31,9 +31,9 @@ export default class MyGarden extends Component {
           source={dirtBackground}>
           <View style={styles.myGardenContainer}>
             <View style={styles.myGardenHeader}>
-              <Text style={{color: 'white'}}>My Garden</Text>
+              <Text style={styles.headerText}>My Garden</Text>
             </View>
-            <ScrollView >
+            <ScrollView style={styles.gardenScrollView}>
               <View style={styles.myGarden}>
                 {this.state.gardenPlants.map( plant => {
                   return(

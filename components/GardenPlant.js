@@ -18,7 +18,7 @@ export default function GardenPlant ({ info, navigation, navigation: { dangerous
           name="flower"
           size={40} />
 
-        <Text style={styles.text}>{info.plant_name}</Text>
+        <Text style={styles.textLight}>{info.plant_name}</Text>
       </View>
     </TouchableOpacity>
   );

@@ -36,8 +36,7 @@ export default class PlantInfo extends Component {
           style={styles.greenCropBackground}
           >
           <View style={styles.plantInfoHeader}>
-          {/*The style below may need to be changed since we switched these in the plantProfile page*/}
-            <Text style={styles.plantChildName}>{plantData.plant_type}</Text>
+            <Text style={styles.headerText}>{plantData.plant_type}</Text>
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
@@ -64,10 +63,7 @@ export default class PlantInfo extends Component {
               this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
               this.props.navigation.navigate('NamePlant', {id: plantData.id})}
             }>
-            <View>
-              <Text
-              style={styles.text}>Add Plant to Garden</Text>
-            </View>
+            <Text style={styles.textLight}>Add to Garden</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.backButtonContainer}
@@ -76,7 +72,7 @@ export default class PlantInfo extends Component {
               this.props.navigation.navigate('SearchPage')}
             }
             >
-            <Text style={styles.backButton}>Go Back to Search</Text>
+            <Text style={styles.backButton}> Back to Search</Text>
           </TouchableOpacity>
         </ImageBackground>
       </SafeAreaView>
