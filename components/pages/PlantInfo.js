@@ -28,13 +28,13 @@ export default class PlantInfo extends Component {
   }
 
   render () {
-    let plantData = this.state.plantInfo
+    let plantData = this.state.plantInfo;
+
     return (
       <SafeAreaView style={styles.container}>
         <ImageBackground
           source={backgroundImg}
-          style={styles.greenCropBackground}
-          >
+          style={styles.greenCropBackground}>
           <View style={styles.plantInfoHeader}>
             <Text style={styles.headerText}>{plantData.plant_type}</Text>
           </View>
@@ -48,30 +48,36 @@ export default class PlantInfo extends Component {
             <View style={[styles.plantContent, styles.borderRadius]}>
               <Text style={styles.plantAttrLabel}>Lighting:</Text>
               <Text style={styles.plantAttrValue}>{plantData.lighting}</Text>
+
               <Text style={styles.plantAttrLabel}>How Often To Water:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.days_between_water} days</Text>
+              <Text style={styles.plantAttrValue}>{plantData.days_between_water} Days</Text>
+
               <Text style={styles.plantAttrLabel}>Seed To Harvest:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.days_to_harvest_from_seed} days</Text>
+              <Text style={styles.plantAttrValue}>{plantData.days_to_harvest_from_seed} Days</Text>
+
               <Text style={styles.plantAttrLabel}>Root Depth:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.root_depth_in} inches</Text>
+              <Text style={styles.plantAttrValue}>{plantData.root_depth_in} Inches</Text>
+
               <Text style={styles.plantAttrLabel}>Plant Lifecycle: </Text>
-              <Text style={styles.plantAttrValue}>{plantData.lifecycle}</Text>
+              <Text style={styles.plantAttrValue}>{plantData.lifecycle} Days</Text>
             </View>
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
-              this.props.navigation.navigate('NamePlant', {id: plantData.id})}
-            }>
-            <Text style={styles.textLight}>Add to Garden</Text>
-          </TouchableOpacity>
+
+          <View style={styles.plantActionsContainer}>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+                this.props.navigation.navigate('NamePlant', {id: plantData.id})}}>
+
+              <Text style={styles.textLight}>Add to Garden</Text>
+            </TouchableOpacity>
+          </View>
+
           <TouchableOpacity
             style={styles.backButtonContainer}
             onPress={() => {
               this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-              this.props.navigation.navigate('SearchPage')}
-            }
-            >
+              this.props.navigation.navigate('SearchPage')}}>
             <Text style={styles.backButton}> Back to Search</Text>
           </TouchableOpacity>
         </ImageBackground>
