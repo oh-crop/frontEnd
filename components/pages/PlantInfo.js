@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -12,23 +12,24 @@ import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
 import api from '../../api/plantAPI';
 
-export default class PlantInfo extends Component {
-  state = {
-    plantInfo: {}
-   }
+export default function PlantInfo ({route, navigation}) {
   
-  componentDidMount() {
-    this.getPlantId(this.props.route.params.id)
-  }
+  const [plantInfo, setPlantInfo] = useState({});
 
-  getPlantId = (id) => {
+  useEffect(() => {
+     const getPlant = navigation.addListener('focus', () => {
+       getPlantId(route.params.id)
+     });
+
+     return getPlant;
+   }, [navigation]);
+
+  const getPlantId = (id) => {
     api.getPlantById(id)
-    .then(response => this.setState({plantInfo: response.data}))
+    .then(response => setPlantInfo(response.data))
     .catch(err => console.log(err))
   }
 
-  render () {
-    let plantData = this.state.plantInfo
     return (
       <SafeAreaView style={styles.container}>
         <ImageBackground
@@ -37,32 +38,32 @@ export default class PlantInfo extends Component {
           >
           <View style={styles.plantInfoHeader}>
           {/*The style below may need to be changed since we switched these in the plantProfile page*/}
-            <Text style={styles.plantChildName}>{plantData.plant_type}</Text>
+            <Text style={styles.plantChildName}>{plantInfo.plant_type}</Text>
           </View>
           <View style={styles.transparentSubHeader}></View>
           <View style={styles.plantImgContainer}>
             <Image
               style={styles.plantImg}
-              source={{uri: plantData.plant_image}}/>
+              source={{uri: plantInfo.plant_image}}/>
           </View>
           <View style={styles.plantContentContainer}>
             <View style={styles.plantContent}>
               <Text style={styles.plantAttrLabel}>Lighting:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.lighting}</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.lighting}</Text>
               <Text style={styles.plantAttrLabel}>How Often To Water:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.days_between_water} days</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.days_between_water} days</Text>
               <Text style={styles.plantAttrLabel}>Seed To Harvest:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.days_to_harvest_from_seed} days</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.days_to_harvest_from_seed} days</Text>
               <Text style={styles.plantAttrLabel}>Root Depth:</Text>
-              <Text style={styles.plantAttrValue}>{plantData.root_depth_in} inches</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.root_depth_in} inches</Text>
               <Text style={styles.plantAttrLabel}>Plant Lifecycle: </Text>
-              <Text style={styles.plantAttrValue}>{plantData.lifecycle}</Text>
+              <Text style={styles.plantAttrValue}>{plantInfo.lifecycle}</Text>
             </View>
           </View>
           <TouchableOpacity
             onPress={() => {
-              this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
-              this.props.navigation.navigate('NamePlant', {id: plantData.id})}
+              navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+              navigation.navigate('NamePlant', {id: plantInfo.id})}
             }>
             <View>
               <Text 
@@ -72,8 +73,8 @@ export default class PlantInfo extends Component {
           <TouchableOpacity
             style={styles.backButtonContainer}
             onPress={() => {
-              this.props.navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-              this.props.navigation.navigate('SearchPage')}
+              navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
+              navigation.navigate('SearchPage')}
             }
             >
             <Text style={styles.backButton}>Go Back to Search</Text>
@@ -81,5 +82,4 @@ export default class PlantInfo extends Component {
         </ImageBackground>
       </SafeAreaView>
     );
-  }
 }
