@@ -17,36 +17,36 @@ export default class MyGarden extends Component {
 
   getAllGardenPlants = () => {
     api.getAllGardenPlants()
-    .then(response => {
-      this.setState({gardenPlants: response.data})
-    })
-    .catch(err => console.log(err))
+      .then(response => {
+        this.setState({gardenPlants: response.data})
+      })
+      .catch(err => console.log(err))
+  }
+
+  renderGardenPlants = () => {
+    return (
+      this.state.gardenPlants.map( plant => (
+        <GardenPlant
+          navigation={ this.props.navigation }
+          info={plant}
+          key={plant.id}/>
+      ))
+    )
   }
 
   render(){
     return (
       <SafeAreaView style={styles.container}>
-
         <ImageBackground
           style={styles.dirtBackground}
           source={dirtBackground}>
-
           <View style={styles.myGardenHeader}>
             <Text style={styles.headerText}>My Garden</Text>
           </View>
-
           <View style={styles.myGardenContent}>
-
-
-            <ScrollView>
+            <ScrollView >
               <View style={styles.myGarden}>
-                {this.state.gardenPlants.map( plant => {
-                  return(
-                    <GardenPlant
-                      navigation={ this.props.navigation }
-                      info={plant} key={plant.id}/>
-                  )
-                })}
+                {this.renderGardenPlants()}
               </View>
             </ScrollView>
           </View>
