@@ -31,7 +31,9 @@ export default class NamePlant extends Component {
     return (
       <SafeAreaView>
         <View>
-          <Text>Give your new crop a name</Text>
+          <Text>
+            Give your new crop a name
+          </Text>
           <InputBar
             placeholder={'Enter plant name'}
             buttonText={'Add Plant'}

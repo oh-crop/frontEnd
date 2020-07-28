@@ -6,8 +6,8 @@ import styles from '../styles/styles';
 
 const searchIcon = <Ionicons name="md-search" size={40} color="black" />
 
-function InputBar (props) {
-  
+const InputBar = (props) => {
+
   return (
     <View style={styles.searchInputContainer}>
       <TextInput
