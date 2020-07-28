@@ -94,10 +94,16 @@ export default styles = StyleSheet.create({
     // components/PlantItem.js
   searchResultsContainer: {
     flex: 1,
-    backgroundColor: '#fffefe',
+    // backgroundColor: '#fffefe',
     justifyContent: 'center',
     height: '100%',
     width: '100%',
+  },
+  opacityBackground: {
+    borderWidth: 5,
+
+    height: '100%',
+
   },
   meetAPlantImg: {
     height: 200,
@@ -115,11 +121,15 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 24,
     marginVertical: 5,
+
   },
   searchResultText: {
     alignSelf: 'center',
     fontSize: 24,
     paddingBottom: 20,
+  },
+  searchBackground: {
+
   },
 
   // PLANT INFO PAGE - components/pages/PlantInfo.js
@@ -183,16 +193,15 @@ export default styles = StyleSheet.create({
     marginBottom: '15%',
   },
   addPlantBtnContainer: {
-    left: 255,
-    position: 'absolute',
-    top: 330,
-    zIndex: 8,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 22,
+    marginTop: -20,
   },
   addPlantBtn: {
     color: '#503924',
   },
   addPlantBtnText: {
-    alignSelf: 'center',
     color: '#503924',
     fontSize: 24,
     marginTop: -10,
@@ -327,4 +336,5 @@ export default styles = StyleSheet.create({
     padding: 8,
     width: '40%',
   },
+
 });
