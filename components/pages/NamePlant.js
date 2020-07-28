@@ -1,9 +1,16 @@
 import React, {Component} from 'react';
-import { View, Text, SafeAreaView, Input, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Input,
+  TouchableOpacity,
+  ImageBackground } from 'react-native';
 
 import styles from '../../styles/styles';
 import InputBar from '../InputBar';
 import api from '../../api/plantAPI';
+import backgroundImg from '../../assets/plant_info_background.jpg';
 
 export default class NamePlant extends Component {
   state = {
@@ -28,23 +35,29 @@ export default class NamePlant extends Component {
 
   render() {
     return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.container}>
+        <ImageBackground
+          source={backgroundImg}
+          style={styles.greenCropBackground}>
+
         <View>
+        
           <Text>Give your new crop a name</Text>
-          <InputBar 
+          <InputBar
             placeholder={'Enter plant name'}
             buttonText={'Add Plant'}
             setValue={this.setName}
-            inputButtonClick={this.addPlant}
-            />
+            inputButtonClick={this.addPlant}/>
+
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => {
-              this.props.navigation.goBack()}
-            }>
+            onPress={() => {this.props.navigation.goBack()}}>
             <Text style={styles.goBackButton}>Go Back</Text>
           </TouchableOpacity>
+
         </View>
+
+        </ImageBackground>
       </SafeAreaView>
     )
   }
