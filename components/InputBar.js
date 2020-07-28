@@ -1,26 +1,27 @@
 import React, {Component, useState} from 'react';
-import { View, Text, Button, TextInput } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 
 import styles from '../styles/styles';
 
-const searchIcon = <Ionicons name="md-search" size={40} color="black" />
-
 function InputBar (props) {
-  
   return (
-    <View style={styles.searchInputContainer}>
+    <View style={props.styles}>
       <TextInput
-        style={[styles.searchbox, styles.textDark]}
-          placeholder={props.placeholder}
-          onChangeText={(text) => props.setValue(text)}
-      />
-      <View style={styles.borderRadius}>
-        <Button
-          title={props.buttonText}
-          onPress={() => props.inputButtonClick()}
-        />
-      </View>
+        style={[styles.addNameSearchbox, styles.textDark]}
+        placeholder={props.placeholder}
+        onChangeText={(text) => props.setValue(text)}/>
+        <View style={styles.borderRadius}>
+          <TouchableOpacity
+            style={[styles.submitBtn, styles.borderRadius]}
+            onPress={() => props.inputButtonClick()}>
+            <Text style={styles.textLight}>{props.buttonText}</Text>
+          </TouchableOpacity>
+        </View>
     </View>
   )
 }

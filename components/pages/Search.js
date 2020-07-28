@@ -32,6 +32,7 @@ export default class Search extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <InputBar
+          styles={[styles.searchInputContainer]}
           setValue={this.setQuery}
           inputButtonClick={this.gatherQuery}
           placeholder={'Search'}
@@ -52,7 +53,6 @@ export default class Search extends Component {
   }
 
   // this method will render to the page if the 'hasSearched' toggle is set to false
-
   meetThePlant = () => (
     <View style={styles.searchResultsContainer}>
       <Text style={styles.subHeader}>
