@@ -183,16 +183,15 @@ export default styles = StyleSheet.create({
     marginBottom: '15%',
   },
   addPlantBtnContainer: {
-    left: 255,
-    position: 'absolute',
-    top: 330,
-    zIndex: 8,
+    alignSelf: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 22,
+    marginTop: -20,
   },
   addPlantBtn: {
     color: '#503924',
   },
   addPlantBtnText: {
-    alignSelf: 'center',
     color: '#503924',
     fontSize: 24,
     marginTop: -10,
@@ -327,4 +326,5 @@ export default styles = StyleSheet.create({
     padding: 8,
     width: '40%',
   },
+
 });
