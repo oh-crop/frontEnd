@@ -94,10 +94,16 @@ export default styles = StyleSheet.create({
     // components/PlantItem.js
   searchResultsContainer: {
     flex: 1,
-    backgroundColor: '#fffefe',
+    // backgroundColor: '#fffefe',
     justifyContent: 'center',
     height: '100%',
     width: '100%',
+  },
+  opacityBackground: {
+    borderWidth: 5,
+
+    height: '100%',
+
   },
   meetAPlantImg: {
     height: 200,
@@ -115,11 +121,15 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 24,
     marginVertical: 5,
+
   },
   searchResultText: {
     alignSelf: 'center',
     fontSize: 24,
     paddingBottom: 20,
+  },
+  searchBackground: {
+
   },
 
   // PLANT INFO PAGE - components/pages/PlantInfo.js
