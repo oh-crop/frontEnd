@@ -13,7 +13,8 @@ export default function PlantItem ({ title, image, navigation, id }) {
         <Text style={styles.searchResultText}>{title}</Text>
         <Image
           style={[styles.meetAPlantImg, styles.borderRadius]}
-          source={{uri: image}}/>
+          source={{uri: image}}
+          testID="PlantItem.Image"/>
       </View>
     </TouchableOpacity>
   );

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Garden Plant it renders / snapshot test 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "height": 180,
+      "opacity": 1,
+      "width": 110,
+    }
+  }
+  testID="GardenPlant.TouchableOpacity"
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "alignSelf": "flex-start",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 50,
+          },
+          Object {
+            "color": "limegreen",
+            "textShadowColor": "grey",
+            "textShadowOffset": Object {
+              "height": 12,
+              "width": 1,
+            },
+            "textShadowRadius": 5,
+          },
+          Object {
+            "fontFamily": "material-community",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+      testID="GardenPlant.Icon"
+    >
+      
+    </Text>
+  </View>
+  <View>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#fafafa",
+            "fontSize": 19,
+          },
+          Object {
+            "textAlign": "center",
+          },
+        ]
+      }
+    >
+      Test Plant Name
+    </Text>
+  </View>
+</View>
+`;
