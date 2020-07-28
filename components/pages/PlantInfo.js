@@ -57,15 +57,14 @@ export default function PlantInfo ({route, navigation}) {
               <Text style={styles.plantAttrValue}>{plantInfo.root_depth_in} Inches</Text>
               <Text style={styles.plantAttrLabel}>Plant Lifecycle: </Text>
               <Text style={styles.plantAttrValue}>{plantInfo.lifecycle}</Text>
-              <View style={[styles.plantActionsContainer, styles.addPlantBtnContainer]}>
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
-                    navigation.navigate('NamePlant', {id: plantInfo.id, image: plantInfo.plant_image})}}>
-                  <MaterialIcons name="add" size={45}  style={styles.addPlantBtn} />
-                  <Text style={[styles.addPlantBtnText]}>Add</Text>
-                </TouchableOpacity>
-              </View>
+              <TouchableOpacity
+                style={styles.addPlantBtnContainer}
+                onPress={() => {
+                  navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+                  navigation.navigate('NamePlant', {id: plantInfo.id, image: plantInfo.plant_image})}}>
+                <MaterialIcons name="add" size={45}  style={styles.addPlantBtn} />
+                <Text style={[styles.addPlantBtnText]}>Add</Text>
+              </TouchableOpacity>
             </View>
           </View>
           <OpacityButton

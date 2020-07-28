@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import { View, Text, FlatList, SafeAreaView } from 'react-native';
+import { View, Text, FlatList, SafeAreaView, ImageBackground } from 'react-native';
 
 import PlantItem from '../PlantItem';
 import InputBar from '../InputBar';
 import styles from '../../styles/styles';
 import api from '../../api/plantAPI';
 import LoadingPage from '../Loading';
+import backgroundImg from '../../assets/search-background.jpg';
 
 export default class Search extends Component {
   state = {
@@ -31,12 +32,14 @@ export default class Search extends Component {
   render () {
     return (
       <SafeAreaView style={styles.container}>
+
         <InputBar
           styles={[styles.searchInputContainer]}
           setValue={this.setQuery}
           inputButtonClick={this.gatherQuery}
           placeholder={'Search'}
           buttonText={'Search'}/>
+
         { !this.state.hasSearched
           ? this.meetThePlant()
           : this.searchResults() }
@@ -44,6 +47,7 @@ export default class Search extends Component {
     );
   };
 
+  // </ImageBackground>
   renderLoader = () => {
     if (!this.state.searchResults.length && this.state.hasSearched) {
       return <LoadingPage />
@@ -54,24 +58,35 @@ export default class Search extends Component {
 
   // this method will render to the page if the 'hasSearched' toggle is set to false
   meetThePlant = () => (
-    <View style={styles.searchResultsContainer}>
-      <Text style={styles.subHeader}>
-        MEET A NEW PLANT!
-      </Text>
-      <PlantItem
-        title={this.state.randomPlant.plant_type}
-        image={this.state.randomPlant.plant_image}
-        id={this.state.randomPlant.id}
-        navigation={this.props.navigation}/>
-    </View>
+
+    <ImageBackground
+      source={backgroundImg}
+      style={[styles.greenCropBackground,]}>
+
+      <View style={styles.searchResultsContainer}>
+
+        <Text style={styles.subHeader}>
+          MEET A NEW PLANT!
+        </Text>
+        <PlantItem
+          title={this.state.randomPlant.plant_type}
+          image={this.state.randomPlant.plant_image}
+          id={this.state.randomPlant.id}
+          navigation={this.props.navigation}/>
+        </View>
+      </ImageBackground>
   );
 
   searchResults = () => (
     <View style={styles.searchResultsContainer}>
-    <FlatList
-      data={this.state.searchResults}
-      keyExtractor={item => `${item.id}`}
-      renderItem={this.renderPlantItem} />
+      <ImageBackground
+        source={backgroundImg}
+        style={[styles.greenCropBackground, styles.searchBackground]}>
+      <FlatList
+        data={this.state.searchResults}
+        keyExtractor={item => `${item.id}`}
+        renderItem={this.renderPlantItem} />
+      </ImageBackground>
     </View>
   )
 
