@@ -68,7 +68,6 @@ export default class NamePlant extends Component {
           pressFunction={ () => this.props.navigation.goBack() }
           textStyle={ styles.backButton }
           buttonStyle={ styles.backButtonContainer }/>
-        </TouchableOpacity>
         </ImageBackground>
       </SafeAreaView>
     )

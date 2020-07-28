@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Image,
   ImageBackground,
+  TouchableOpacity
 } from 'react-native';
 
 import styles from '../../styles/styles';
@@ -35,19 +36,15 @@ export default function PlantInfo ({route, navigation}) {
         <ImageBackground
           source={backgroundImg}
           style={styles.greenCropBackground}>
-
           <View style={styles.plantInfoHeader}>
             <Text style={styles.headerText}>{plantInfo.plant_type}</Text>
           </View>
-
           <View style={styles.transparentSubHeader}></View>
-
           <View style={styles.plantImgContainer}>
             <Image
               style={styles.plantImg}
               source={{uri: plantInfo.plant_image}}/>
           </View>
-
           <View style={[styles.plantContentContainer, styles.boxShadow]}>
             <View style={[styles.plantContent, styles.borderRadius]}>
               <Text style={styles.plantAttrLabel}>Lighting:</Text>
