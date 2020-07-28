@@ -95,13 +95,13 @@ export default function PlantProfile({ route, navigation }) {
               <TouchableOpacity
                 style={styles.actionButtons}
                 onPress={() => waterPlant(plantInfo.gardenplant_id)}>
-                <Entypo name="water" size={24} color="#0774B9" />
+                <Entypo name="water" size={30} color="#0774B9" />
                 <Text style={styles.waterButtonText}>Water</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.actionButtons}
                 onPress={() => deletePlant(plantInfo.gardenplant_id)}>
-                <MaterialCommunityIcons name="shovel" size={24} color="#9e020f" />
+                <MaterialCommunityIcons name="shovel" size={30} color="#9e020f" />
                 <Text style={styles.removeButtonText}>Remove</Text>
               </TouchableOpacity>
             </View>
@@ -113,7 +113,7 @@ export default function PlantProfile({ route, navigation }) {
             navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
             navigation.navigate('MyGardenPage')}}>
           <Text style={styles.backButton}>
-            Go Back to My Garden
+            Back to Garden
           </Text>
         </TouchableOpacity>
       </ImageBackground>
