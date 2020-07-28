@@ -36,19 +36,20 @@ exports[`Landing Page Landing Page does render 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
+        "alignItems": "center",
         "backgroundColor": "#5DA25B",
-        "borderRadius": 10,
-        "display": "flex",
-        "justifyContent": "center",
+        "borderRadius": 5,
+        "elevation": 15,
         "margin": 10,
         "opacity": 1,
         "padding": 15,
-        "shadowColor": "rgba(0, 0, 0, 0.05)",
+        "shadowColor": "#000",
         "shadowOffset": Object {
           "height": 7,
-          "width": 7,
+          "width": 0,
         },
-        "shadowOpacity": 0.1,
+        "shadowOpacity": 0.43,
+        "shadowRadius": 9.51,
         "width": 150,
       }
     }
@@ -56,7 +57,7 @@ exports[`Landing Page Landing Page does render 1`] = `
     <Text
       style={
         Object {
-          "color": "white",
+          "color": "#fafafa",
           "fontSize": 19,
         }
       }
@@ -76,19 +77,20 @@ exports[`Landing Page Landing Page does render 1`] = `
     onStartShouldSetResponder={[Function]}
     style={
       Object {
+        "alignItems": "center",
         "backgroundColor": "#5DA25B",
-        "borderRadius": 10,
-        "display": "flex",
-        "justifyContent": "center",
+        "borderRadius": 5,
+        "elevation": 15,
         "margin": 10,
         "opacity": 1,
         "padding": 15,
-        "shadowColor": "rgba(0, 0, 0, 0.05)",
+        "shadowColor": "#000",
         "shadowOffset": Object {
           "height": 7,
-          "width": 7,
+          "width": 0,
         },
-        "shadowOpacity": 0.1,
+        "shadowOpacity": 0.43,
+        "shadowRadius": 9.51,
         "width": 150,
       }
     }
@@ -96,7 +98,7 @@ exports[`Landing Page Landing Page does render 1`] = `
     <Text
       style={
         Object {
-          "color": "white",
+          "color": "#fafafa",
           "fontSize": 19,
         }
       }
