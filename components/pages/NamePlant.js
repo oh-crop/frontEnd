@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Input,
   TouchableOpacity,
+  Image,
   ImageBackground } from 'react-native';
 
 import styles from '../../styles/styles';
@@ -34,29 +35,38 @@ export default class NamePlant extends Component {
   }
 
   render() {
+    const plantImg = this.props.route.params.image;
     return (
       <SafeAreaView style={styles.container}>
         <ImageBackground
           source={backgroundImg}
           style={styles.greenCropBackground}>
-
-        <View>
-        
-          <Text>Give your new crop a name</Text>
-          <InputBar
-            placeholder={'Enter plant name'}
-            buttonText={'Add Plant'}
-            setValue={this.setName}
-            inputButtonClick={this.addPlant}/>
-
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => {this.props.navigation.goBack()}}>
-            <Text style={styles.goBackButton}>Go Back</Text>
-          </TouchableOpacity>
-
+        <View style={styles.plantInfoHeader}>
+          <Text style={styles.headerText}>Name Your Crop</Text>
         </View>
-
+        <View style={styles.transparentSubHeader}></View>
+        <View style={styles.plantImgContainer}>
+          <View style={styles.plantImgContainer}>
+            <Image
+              style={styles.plantImg}
+              source={{uri: plantImg}}/>
+          </View>
+        </View>
+        <View style={[styles.addPlantContainer, styles.boxShadow]}>
+          <View style={[styles.addNameForm, styles.borderRadius]}>
+            <InputBar
+              styles={[styles.namePlantInputContainer]}
+              placeholder={'Enter plant name'}
+              buttonText={'Add Plant'}
+              setValue={this.setName}
+              inputButtonClick={this.addPlant}/>
+          </View>
+        </View>
+        <TouchableOpacity
+          style={styles.backButtonContainer}
+          onPress={() => {this.props.navigation.goBack()}}>
+          <Text style={styles.backButton}> Back to Search</Text>
+        </TouchableOpacity>
         </ImageBackground>
       </SafeAreaView>
     )
