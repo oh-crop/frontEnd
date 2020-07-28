@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { View, Text, SafeAreaView, Input, TouchableOpacity } from 'react-native';
+import { View, Text, SafeAreaView, Input } from 'react-native';
 
 import styles from '../../styles/styles';
 import InputBar from '../InputBar';
 import api from '../../api/plantAPI';
+import { OpacityButton } from '../buttons/OpacityButton'
 
 export default class NamePlant extends Component {
   state = {
@@ -31,19 +32,17 @@ export default class NamePlant extends Component {
       <SafeAreaView>
         <View>
           <Text>Give your new crop a name</Text>
-          <InputBar 
+          <InputBar
             placeholder={'Enter plant name'}
             buttonText={'Add Plant'}
             setValue={this.setName}
             inputButtonClick={this.addPlant}
             />
-          <TouchableOpacity
-            style={styles.buttonContainer}
-            onPress={() => {
-              this.props.navigation.goBack()}
-            }>
-            <Text style={styles.goBackButton}>Go Back</Text>
-          </TouchableOpacity>
+            <OpacityButton
+              text={ 'Go Back' }
+              pressFunction={ () => this.props.navigation.goBack() }
+              textStyle={ styles.goBackButton }
+              buttonStyle={ styles.buttonContainer }/>
         </View>
       </SafeAreaView>
     )

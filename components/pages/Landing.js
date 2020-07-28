@@ -5,8 +5,6 @@ import styles from '../../styles/styles';
 import logo from '../../assets/logo.png'
 import { OpacityButton } from '../buttons/OpacityButton'
 
-const navigateToSearch = () => () => navigation.navigate('TabNavigation', { screen: 'Search'})
-const navigateToGarden = () => () => navigation.navigate('TabNavigation', { screen: 'Garden'})
 const landingButtonStyle = [styles.landingButtons, styles.borderRadius, styles.boxShadow]
 const landingButtonTextStyle = styles.textLight
 
@@ -19,12 +17,12 @@ export default function Landing({ navigation }) {
         testID={'Landing.Image'}/>
       <OpacityButton
         text={ 'Search Plants' }
-        pressFunction={ navigateToSearch }
+        pressFunction={ () => navigation.navigate('TabNavigation', { screen: 'Search'}) }
         textStyle={ landingButtonTextStyle }
         buttonStyle={ landingButtonStyle }/>
       <OpacityButton
         text={ 'My Garden' }
-        pressFunction={ navigateToGarden }
+        pressFunction={ () => navigation.navigate('TabNavigation', { screen: 'Garden'}) }
         textStyle={ landingButtonTextStyle }
         buttonStyle={ landingButtonStyle }/>
     </View>

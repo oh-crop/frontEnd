@@ -4,16 +4,16 @@ import {
   Text,
   SafeAreaView,
   Image,
-  TouchableOpacity,
   ImageBackground,
 } from 'react-native';
 
 import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
 import api from '../../api/plantAPI';
+import { OpacityButton } from '../buttons/OpacityButton'
 
 export default function PlantInfo ({route, navigation}) {
-  
+
   const [plantInfo, setPlantInfo] = useState({});
 
   useEffect(() => {
@@ -59,22 +59,20 @@ export default function PlantInfo ({route, navigation}) {
             </View>
           </View>
           <View style={styles.plantActionsContainer}>
-            <TouchableOpacity
-              onPress={() => {
+            <OpacityButton
+              text={ 'Add to Garden' }
+              pressFunction={() => {
                 navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
-                navigation.navigate('NamePlant', {id: plantInfo.id})}}>
-
-              <Text style={styles.textLight}>Add to Garden</Text>
-            </TouchableOpacity>
+                navigation.navigate('NamePlant', {id: plantInfo.id})}}
+              textStyle={ styles.textLight }/>
           </View>
-
-          <TouchableOpacity
-            style={styles.backButtonContainer}
-            onPress={() => {
+          <OpacityButton
+            text={ 'Back to Search' }
+            pressFunction={() => {
               navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-              navigation.navigate('SearchPage')}}>
-            <Text style={styles.backButton}> Back to Search</Text>
-          </TouchableOpacity>
+              navigation.navigate('SearchPage')}}
+            textStyle={ styles.backButton }
+            buttonStyle={ styles.backButtonContainer }/>
         </ImageBackground>
       </SafeAreaView>
     );
