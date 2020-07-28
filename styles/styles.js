@@ -191,6 +191,12 @@ export default styles = StyleSheet.create({
   addPlantBtn: {
     color: '#503924',
   },
+  addPlantBtnText: {
+    alignSelf: 'center',
+    color: '#503924',
+    fontSize: 24,
+    marginTop: -10,
+  },
 
   //MY GARDEN PAGE - components/pages/MyGarden.js
   myGardenContent: {
@@ -280,5 +286,45 @@ export default styles = StyleSheet.create({
     color: '#fffefe',
     fontSize: 22,
     marginBottom: '3%',
+  },
+
+  // NAME PLANT PAGE
+  addPlantContainer: {
+    alignItems: 'center',
+    flex: 8,
+    marginTop: '-10%',
+    marginBottom: '10%',
+  },
+  addNameForm: {
+    backgroundColor: 'rgba(194, 173, 134, .8)',
+    height: '100%',
+    justifyContent: 'center',
+    height: '80%',
+    width: '85%',
+  },
+  namePlantInputContainer: {
+    alignSelf: 'center',
+    justifyContent: 'space-between',
+    height: '30%',
+    marginBottom: -80,
+    width: '85%',
+  },
+  addNameSearchbox: {
+    backgroundColor: 'rgba(255, 254, 254, .1)',
+    borderColor: '#000',
+    borderRadius: 2,
+    borderWidth: 1,
+    height: 40,
+    padding: 5,
+    width: '100%',
+  },
+  submitBtn: {
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: '#5DA25B',
+    marginTop: 5,
+    padding: 8,
+    width: '40%',
   },
 });
