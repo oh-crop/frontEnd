@@ -18,3 +18,15 @@
 *React Native*, *React Expo*
 
 Oh Crop is a ...
+
+
+## Screenshots
+
+Search functionality:
+![Search for a Plant functionality](https://user-images.githubusercontent.com/54754467/88740274-f25f7e00-d0f9-11ea-8891-e5ab3414cc9c.gif)
+
+Add a plant to your garden:
+![Add a Plant functionality](https://user-images.githubusercontent.com/54754467/88740190-bd532b80-d0f9-11ea-8945-6a0d04d56c8d.gif)
+
+View of my garden with delete functionality
+![MyGarden with delete](https://user-images.githubusercontent.com/54754467/88740455-6d289900-d0fa-11ea-86ce-9bcc369443dc.gif)
