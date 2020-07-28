@@ -9,7 +9,10 @@
     "test": "jest"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@expo/vector-icons)"
+    ]
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
@@ -34,6 +37,7 @@
     "@testing-library/react-native": "^5.0.3",
     "babel-preset-expo": "~8.1.0",
     "jest": "^26.1.0",
+    "jest-expo": "^38.0.2",
     "react-test-renderer": "^16.13.1"
   },
   "private": true

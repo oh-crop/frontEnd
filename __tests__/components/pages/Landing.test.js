@@ -15,7 +15,6 @@ describe("Landing Page / Home Screen", () => {
   test('it displays the logo', () => {
     const image = landing.getByTestId("Landing.Image")
 
-    expect(image.props.source.testUri).toBe('../../../assets/logo.png')
     expect(image.type).toBe('Image')
   })
 

@@ -12,11 +12,7 @@ exports[`Landing Page / Home Screen it renders home page as expected 1`] = `
   }
 >
   <Image
-    source={
-      Object {
-        "testUri": "../../../assets/logo.png",
-      }
-    }
+    source={1}
     style={
       Object {
         "height": 300,
