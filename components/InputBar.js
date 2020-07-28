@@ -2,14 +2,11 @@ import React, {Component, useState} from 'react';
 import {
   View,
   Text,
-  Button,
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 
 import styles from '../styles/styles';
-const searchIcon = <Ionicons name="md-search" size={40} color="black" />
 
 function InputBar (props) {
   return (
