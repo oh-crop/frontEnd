@@ -60,15 +60,16 @@ export default function PlantProfile({ route, navigation }) {
   }
 
   return (
-    console.log(plantInfo.image),
     <SafeAreaView style={styles.container}>
       <ImageBackground
         source={backgroundImg}
         style={styles.greenCropBackground}>
+
         <View style={styles.plantInfoHeader}>
           <Text style={styles.headerText}>{plantInfo.plant_name}</Text>
           <Text style={styles.plantName}>{plantInfo.plant_type}</Text>
         </View>
+
         <View style={styles.transparentSubHeader}></View>
         <View style={styles.plantImgContainer}>
 
@@ -95,20 +96,20 @@ export default function PlantProfile({ route, navigation }) {
               <TouchableOpacity
                 style={styles.actionButtons}
                 onPress={() => waterPlant(plantInfo.gardenplant_id)}>
-                <Entypo name="water" size={24} color="#0774B9" />
+                <Entypo name="water" size={30} color="#0774B9" />
                 <Text style={styles.waterButtonText}>Water</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.actionButtons}
                 onPress={() => deletePlant(plantInfo.gardenplant_id)}>
-                <MaterialCommunityIcons name="shovel" size={24} color="#9e020f" />
+                <MaterialCommunityIcons name="shovel" size={30} color="#9e020f" />
                 <Text style={styles.removeButtonText}>Remove</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
         <OpacityButton
-          text={ 'Back to My Garden' }
+          text={ 'Back to Garden' }
           pressFunction={() => {
             navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
             navigation.navigate('MyGardenPage')}}

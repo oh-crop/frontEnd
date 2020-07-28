@@ -9,6 +9,7 @@ import {
 
 import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
+import { MaterialIcons } from '@expo/vector-icons';
 import api from '../../api/plantAPI';
 import { OpacityButton } from '../buttons/OpacityButton'
 
@@ -34,17 +35,20 @@ export default function PlantInfo ({route, navigation}) {
         <ImageBackground
           source={backgroundImg}
           style={styles.greenCropBackground}>
+
           <View style={styles.plantInfoHeader}>
-          {/*The style below may need to be changed since we switched these in the plantProfile page*/}
             <Text style={styles.headerText}>{plantInfo.plant_type}</Text>
           </View>
+
           <View style={styles.transparentSubHeader}></View>
+
           <View style={styles.plantImgContainer}>
             <Image
               style={styles.plantImg}
               source={{uri: plantInfo.plant_image}}/>
           </View>
-          <View style={styles.plantContentContainer}>
+
+          <View style={[styles.plantContentContainer, styles.boxShadow]}>
             <View style={[styles.plantContent, styles.borderRadius]}>
               <Text style={styles.plantAttrLabel}>Lighting:</Text>
               <Text style={styles.plantAttrValue}>{plantInfo.lighting}</Text>
@@ -56,15 +60,16 @@ export default function PlantInfo ({route, navigation}) {
               <Text style={styles.plantAttrValue}>{plantInfo.root_depth_in} Inches</Text>
               <Text style={styles.plantAttrLabel}>Plant Lifecycle: </Text>
               <Text style={styles.plantAttrValue}>{plantInfo.lifecycle}</Text>
+              <View style={[styles.plantActionsContainer, styles.addPlantBtnContainer]}>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
+                    navigation.navigate('NamePlant', {id: plantInfo.id, image: plantInfo.plant_image})}}>
+                  <MaterialIcons name="add" size={45}  style={styles.addPlantBtn} />
+                  <Text style={[styles.addPlantBtnText]}>Add</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-          <View style={styles.plantActionsContainer}>
-            <OpacityButton
-              text={ 'Add to Garden' }
-              pressFunction={() => {
-                navigation.dangerouslyGetParent().setOptions({ tabBarVisible: false })
-                navigation.navigate('NamePlant', {id: plantInfo.id})}}
-              textStyle={ styles.textLight }/>
           </View>
           <OpacityButton
             text={ 'Back to Search' }
