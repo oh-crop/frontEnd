@@ -11,12 +11,10 @@ export default function SearchStackNavigator() {
   return (
     <SearchStack.Navigator
       initialPage="SearchPage"
-      screenOptions={{ headerShown: false }}
-      >
+      screenOptions={{ headerShown: false }}>
       <SearchStack.Screen name='SearchPage' component={SearchPage}/>
       <SearchStack.Screen name='PlantInfoPage' component={PlantInfoPage}/>
-      <SearchStack.Screen
-      name='NamePlant' component={NamePlant} />
+      <SearchStack.Screen name='NamePlant' component={NamePlant} />
     </SearchStack.Navigator>
   );
 }
