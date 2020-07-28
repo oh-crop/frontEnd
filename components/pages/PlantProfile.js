@@ -13,7 +13,7 @@ import { MaterialCommunityIcons, Entypo } from '@expo/vector-icons';
 import styles from '../../styles/styles';
 import backgroundImg from '../../assets/plant_info_background.jpg';
 import api from '../../api/plantAPI';
-
+import { OpacityButton } from '../buttons/OpacityButton'
 
 export default function PlantProfile({ route, navigation }) {
 
@@ -107,15 +107,13 @@ export default function PlantProfile({ route, navigation }) {
             </View>
           </View>
         </View>
-        <TouchableOpacity
-          style={styles.backButtonContainer}
-          onPress={() => {
+        <OpacityButton
+          text={ 'Back to My Garden' }
+          pressFunction={() => {
             navigation.dangerouslyGetParent().setOptions({ tabBarVisible: true })
-            navigation.navigate('MyGardenPage')}}>
-          <Text style={styles.backButton}>
-            Go Back to My Garden
-          </Text>
-        </TouchableOpacity>
+            navigation.navigate('MyGardenPage')}}
+          textStyle={ styles.backButton }
+          buttonStyle={ styles.backButtonContainer }/>
       </ImageBackground>
     </SafeAreaView>
   );
