@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup } from 'react-native-testing-library';
+import { render, cleanup, fireEvent } from 'react-native-testing-library';
 
 import Landing from '../../../components/pages/Landing';
 
@@ -9,10 +9,6 @@ describe("Landing Page / Home Screen", () => {
   beforeEach(() => {
     landing = render(<Landing />)
   });
-
-  // beforeEach(() => {
-  //   landing = render(<Landing />);
-  // });
 
   afterEach(cleanup);
 
@@ -26,13 +22,13 @@ describe("Landing Page / Home Screen", () => {
   test('renders "Search Plants" button', () => {
     const searchButton = landing.queryByText('Search Plants')
 
-    expect(searchButton).not.toBeNull()
+    expect(searchButton).toBeTruthy()
   })
 
   test('renders "My Garden" button', () => {
     const gardenButton = landing.queryByText('My Garden')
 
-    expect(gardenButton).not.toBeNull()
+    expect(gardenButton).toBeTruthy()
   })
 
   test("it renders home page as expected", () => {
