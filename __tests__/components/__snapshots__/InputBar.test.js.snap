@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Page / Home Screen it renders snapshot test 1`] = `
+<View>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Test Placeholder Text"
+    rejectResponderTermination={true}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "rgba(255, 254, 254, .1)",
+          "borderColor": "#000",
+          "borderRadius": 2,
+          "borderWidth": 1,
+          "height": 40,
+          "padding": 5,
+          "width": "100%",
+        },
+        Object {
+          "color": "#1d1d1d",
+          "fontSize": 19,
+        },
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+  <View
+    style={
+      Object {
+        "borderRadius": 5,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#5DA25B",
+          "borderRadius": 5,
+          "justifyContent": "flex-end",
+          "marginTop": 5,
+          "opacity": 1,
+          "padding": 8,
+          "width": "40%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fafafa",
+            "fontSize": 19,
+          }
+        }
+      >
+        Test Button Text
+      </Text>
+    </View>
+  </View>
+</View>
+`;
