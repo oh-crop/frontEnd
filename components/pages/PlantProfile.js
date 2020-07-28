@@ -60,15 +60,16 @@ export default function PlantProfile({ route, navigation }) {
   }
 
   return (
-    console.log(plantInfo.image),
     <SafeAreaView style={styles.container}>
       <ImageBackground
         source={backgroundImg}
         style={styles.greenCropBackground}>
+
         <View style={styles.plantInfoHeader}>
           <Text style={styles.headerText}>{plantInfo.plant_name}</Text>
           <Text style={styles.plantName}>{plantInfo.plant_type}</Text>
         </View>
+        
         <View style={styles.transparentSubHeader}></View>
         <View style={styles.plantImgContainer}>
 
