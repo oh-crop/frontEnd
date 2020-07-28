@@ -12,8 +12,8 @@ export default styles = StyleSheet.create({
   },
   backButtonContainer: {
     alignItems: 'center',
-    backgroundColor: '#f8f8f8',
-    flex: 1,
+    backgroundColor: 'rgba(248, 248, 248, .8)',
+    flex: 1.1,
     justifyContent: 'center',
   },
   backButton: {
@@ -150,8 +150,6 @@ export default styles = StyleSheet.create({
   plantImgContainer: {
     alignItems: 'center',
     alignSelf: 'center',
-    borderWidth: 2,
-    borderColor: 'red',
     borderRadius: 100,
     height: 120,
     justifyContent: 'center',
@@ -161,15 +159,12 @@ export default styles = StyleSheet.create({
     width: 120,
   },
   plantImg: {
-    borderWidth: 2,
-    
     borderRadius: 100,
     height: 120,
     width: 120,
   },
   plantContent: {
     backgroundColor: 'rgba(194, 173, 134, .8)',
-    // backgroundColor: 'rgba(159, 135, 95, .9)',
     height: '100%',
     justifyContent: 'space-around',
     paddingTop: '25%',
@@ -186,6 +181,21 @@ export default styles = StyleSheet.create({
     fontSize: 22,
     marginTop: '12%',
     marginBottom: '15%',
+  },
+  addPlantBtnContainer: {
+    left: 255,
+    position: 'absolute',
+    top: 330,
+    zIndex: 8,
+  },
+  addPlantBtn: {
+    color: '#503924',
+  },
+  addPlantBtnText: {
+    alignSelf: 'center',
+    color: '#503924',
+    fontSize: 24,
+    marginTop: -10,
   },
 
   //MY GARDEN PAGE - components/pages/MyGarden.js
@@ -244,14 +254,17 @@ export default styles = StyleSheet.create({
     backgroundColor: 'rgba(159, 135, 95, .9)',
     paddingTop: '20%',
     justifyContent: 'space-between',
-    paddingLeft: '5%',
-    paddingRight: '2%',
+    paddingHorizontal: '4%',
     width: '85%',
     height: '100%',
   },
   plantActionsContainer: {
+    alignSelf: 'flex-start',
+    height: 60,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
+    marginTop: -15,
+    width: '100%',
   },
   actionButtons: {
     alignItems: 'center',
@@ -273,5 +286,45 @@ export default styles = StyleSheet.create({
     color: '#fffefe',
     fontSize: 22,
     marginBottom: '3%',
+  },
+
+  // NAME PLANT PAGE
+  addPlantContainer: {
+    alignItems: 'center',
+    flex: 8,
+    marginTop: '-10%',
+    marginBottom: '10%',
+  },
+  addNameForm: {
+    backgroundColor: 'rgba(194, 173, 134, .8)',
+    height: '100%',
+    justifyContent: 'center',
+    height: '80%',
+    width: '85%',
+  },
+  namePlantInputContainer: {
+    alignSelf: 'center',
+    justifyContent: 'space-between',
+    height: '30%',
+    marginBottom: -80,
+    width: '85%',
+  },
+  addNameSearchbox: {
+    backgroundColor: 'rgba(255, 254, 254, .1)',
+    borderColor: '#000',
+    borderRadius: 2,
+    borderWidth: 1,
+    height: 40,
+    padding: 5,
+    width: '100%',
+  },
+  submitBtn: {
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    backgroundColor: '#5DA25B',
+    marginTop: 5,
+    padding: 8,
+    width: '40%',
   },
 });
