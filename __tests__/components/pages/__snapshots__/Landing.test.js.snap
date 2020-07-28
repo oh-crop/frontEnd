@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Page / Home Screen it renders home page as expected 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#fffefe",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../assets/logo.png",
+      }
+    }
+    style={
+      Object {
+        "height": 300,
+        "width": 300,
+      }
+    }
+    testID="Landing.Image"
+  />
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#5DA25B",
+        "borderRadius": 5,
+        "elevation": 15,
+        "margin": 10,
+        "opacity": 1,
+        "padding": 15,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 7,
+          "width": 0,
+        },
+        "shadowOpacity": 0.43,
+        "shadowRadius": 9.51,
+        "width": 150,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fafafa",
+          "fontSize": 19,
+        }
+      }
+    >
+      Search Plants
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#5DA25B",
+        "borderRadius": 5,
+        "elevation": 15,
+        "margin": 10,
+        "opacity": 1,
+        "padding": 15,
+        "shadowColor": "#000",
+        "shadowOffset": Object {
+          "height": 7,
+          "width": 0,
+        },
+        "shadowOpacity": 0.43,
+        "shadowRadius": 9.51,
+        "width": 150,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#fafafa",
+          "fontSize": 19,
+        }
+      }
+    >
+      My Garden
+    </Text>
+  </View>
+</View>
+`;
