@@ -219,11 +219,9 @@ export default styles = StyleSheet.create({
   },
   myGarden: {
     padding: '5%',
-    paddingBottom: 0,
-
     flexDirection: 'row',
     flexWrap: 'wrap',
-    paddingLeft: '2%',
+    justifyContent: 'center',
   },
   myGardenBody: {
     height: 180,
