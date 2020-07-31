@@ -9,7 +9,7 @@
 
 [Mike Hernandez GitHub](https://github.com/mikez321)
 
-[Kelsy Darby GitHub](https://github.com/kelshadarby)
+[Kelsha Darby GitHub](https://github.com/kelshadarby)
 
 
 ## Abstract
