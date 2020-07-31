@@ -79,7 +79,7 @@ export default function PlantProfile({ route, navigation }) {
               <Text style={styles.plantProfileAttrValue}>{plantInfo.last_watered}</Text>
 
               <Text style={styles.plantProfileAttrLabel}>Next Water in:</Text>
-              <Text style={styles.plantProfileAttrValue}>5 Days</Text>
+              <Text style={styles.plantProfileAttrValue}>{plantInfo.days_until_next_water} Days</Text>
 
               <Text style={styles.plantProfileAttrLabel}>Harvest Date:</Text>
               <Text style={styles.plantProfileAttrValue}>{plantInfo.harvest_date}</Text>
